@@ -1,4 +1,4 @@
-# Reanimated example1
+# Reanimated example2
 
 <p>
   <!-- iOS -->
