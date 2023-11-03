@@ -13,11 +13,11 @@ import MainScreen from './screens/mainScreen';
 import DrawerScreen from './screens/drawer';
 
 const Stack = createNativeStackNavigator();
-
+ //hello
 export default function App() {
   return (
-    <NavigationContainer>
-    
+    <NavigationContainer> 
+     
       <Stack.Navigator initialRouteName="LoginStackScreen"
       screenOptions={{ headerShown: false }}>
         <Stack.Screen name="LoginStackScreen" component={LoginStackScreen} />
