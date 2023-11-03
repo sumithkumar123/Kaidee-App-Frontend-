@@ -12,8 +12,8 @@ import LoginStackScreen from './routes/loginStackScreen';
 import MainScreen from './screens/mainScreen';
 import DrawerScreen from './screens/drawer';
 
-const Stack = createNativeStackNavigator();
- //hello hi
+const Stack = createNativeStackNavigator(); 
+ //hell
 export default function App() {
   return (
     <NavigationContainer> 
