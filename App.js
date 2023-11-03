@@ -13,7 +13,7 @@ import MainScreen from './screens/mainScreen';
 import DrawerScreen from './screens/drawer';
 
 const Stack = createNativeStackNavigator();
- //hello
+ //hello hi
 export default function App() {
   return (
     <NavigationContainer> 
