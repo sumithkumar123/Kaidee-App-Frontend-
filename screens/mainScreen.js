@@ -32,7 +32,7 @@ export default function MainScreen({navigation}) {
         }, 
         headerTintColor: '#fff',
        
-        headerTitleStyle: {
+        headerTitleStyle: { 
           fontWeight: 'bold',
         },  
 
