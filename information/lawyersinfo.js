@@ -56,8 +56,6 @@ const styles= StyleSheet.create({
         color:'black',
         padding:10,
         margin:10,
-    
-
     }
 
 

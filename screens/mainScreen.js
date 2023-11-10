@@ -8,6 +8,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from '../routes/homeStackScreen';
 import LawBot from './lawbot';
 import Rehabilation from './Rehabilation';
+import ProfileScreen from './profileScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -63,13 +64,13 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-       <Tab.Screen name="Rehabilation" component={Rehabilation} 
+       <Tab.Screen name="Rehabilation" component={ProfileScreen} 
       options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="account" color={color} size={26} />
         ),
-        title: 'Rehabilation',
+        title: 'ProfileScreen',
         headerStyle: {
           backgroundColor: 'black',
         },

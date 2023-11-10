@@ -1,41 +1,18 @@
 import React from "react";
 import { StyleSheet,View,Text ,ScrollView} from "react-native";
-import YoutubePlayer from "react-native-youtube-iframe";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import VocationalStackScreen from "../routes/vocationalstackscreen";
+const RehabilationStack=createNativeStackNavigator(); 
 
 export default function Rehabilation() {
     return (
-        <ScrollView>
-            <View style={styles.youtube}> 
-            <Text style={styles.texts}>Carpentry</Text>
-            <YoutubePlayer 
-                height={300}
-                width={400}
-                play={false}
-                videoId={'sNaHN4tZmRk'}
-            />
-            <Text style={styles.texts}>Welding</Text>
-           <View style={styles.youtube} >
-            <YoutubePlayer 
-            height={300}
-            width={400}
-            play={false}
-            videoId={'e037nbVAwm8'}
-            />                    
-            </View>
-            <View>
-            <Text style={styles.texts}>Tailoring</Text>
-            </View>
-            
-            <View style={styles.youtube}>
-            <YoutubePlayer 
-            height={300}
-            width={400}
-            play={true}
-            videoId={'e037nbVAwm8'}
-            />                    
-            </View>
-       </View> 
-        </ScrollView>
+        <RehabilationStack.Navigator 
+        screenOptions={{ headerShown: false }}>
+          <RehabilationStack.Screen name="VocationalStackScreen" component={VocationalStackScreen} />
+          {/* <Stack.Screen name="DrawerScreen" component={DrawerScreen} /> */}
+  
+        </RehabilationStack.Navigator>
        
      
     ) 
@@ -45,12 +22,19 @@ const styles=StyleSheet.create({
         flexDirection:'column',
         alignItems:"center",
         justifyContent:"center",
-        margin:20,   
+        marginBottom:20, 
+        marginTop:10,
+        padding:10,
       },
     texts: {
         padding:10,
-        height:30,
-        margin:5,
-        fontSize:24,
+        height:60,
+        width:'100%',
+        marginBottom:20,
+        fontSize:34,
+        fontWeight:'bold',
+        textAlign:'left',
+        backgroundColor:'black',
+        color:'white'
     }
 })

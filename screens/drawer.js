@@ -7,6 +7,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 // import myTabs from './tabRoutes';
 import MainScreen from './mainScreen';
+import Rehabilation from './Rehabilation';
 
 
 function SettingsScreen({ navigation }) {
@@ -46,11 +47,12 @@ function DrawerScreen() {
   return (
       <Drawer.Navigator initialRouteName="MainScreen">
         {/* Add your drawer screens here */}
-        <Drawer.Screen name="MainScreen" component={MainScreen} />
-        <Drawer.Screen name="Settings" component={SettingsScreen} />
+        <Drawer.Screen name="Home" component={MainScreen} />
         <Drawer.Screen name="rights" component={rightsScreen} />
         <Drawer.Screen name="legalaid" component={legalaidScreen} />
-        <Drawer.Screen name="rehabiltation" component={rehabiltationScreen} />
+        <Drawer.Screen name="Rehabiltation" component={Rehabilation} />
+        <Drawer.Screen name="Settings" component={SettingsScreen} />
+
         {/* Add more screens as needed */}
       </Drawer.Navigator>
 
