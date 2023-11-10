@@ -21,7 +21,7 @@ export default function Home({navigation}) {
 
         <View style={styles.bot}>
         <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
-      <Image style={styles.image} source={require('../assets/appicon.png')} />
+      <Image style={styles.image} source={require('../assets/bot.gif')} />
     </TouchableOpacity>
         </View>
       
