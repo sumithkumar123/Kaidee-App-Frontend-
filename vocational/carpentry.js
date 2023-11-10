@@ -4,8 +4,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function Carpentry() {
     return (
-        <ScrollView>
-           
+        <ScrollView> 
             <View style={styles.youtube}>        
             <YoutubePlayer 
                 height={300}
