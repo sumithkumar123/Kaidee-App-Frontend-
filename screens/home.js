@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text,View, Button,StyleSheet,Card,Image,TouchableOpacity} from 'react-native';
-import Lawyers from '../information/lawyersinfo';
-import Dashboard from '../information/dashboardinfo';
-import Bail from '../information/bailinfo';
-import { responsiveWidth ,responsiveHeight,responsiveScreenFontSize} from 'react-native-responsive-dimensions';
+// import Lawyers from '../information/lawyersinfo';
+// import Dashboard from '../information/dashboardinfo';
+// import Bail from '../information/bailinfo';
+// import { responsiveWidth ,responsiveHeight,responsiveScreenFontSize} from 'react-native-responsive-dimensions';
 
 
 export default function Home({navigation}) {
