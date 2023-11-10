@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button , Image} from 'react-native';
+import { View, Text, Button , Image, TouchableHighlight, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -36,29 +36,57 @@ function legalaidScreen({ navigation }) {
 
 function LogoTitle() {
   return (
-    <Image
-      style={{ width: 50, height: 50 , borderRadius:'50%'}}
+    <View style={styles.headalign}>
+         <Image
+      style={{ width: 50, height: 50 , borderRadius:'50%',}}
       source={require('../assets/title.gif')}
     />
+    <Text style={styles.htext}>Vichaaraadeen Kaidee</Text>
+
+    </View>
+ 
   );
 }
 
 const Drawer = createDrawerNavigator();
 
-function DrawerScreen() {
+export default function DrawerScreen({navigation}) {
   return (
       <Drawer.Navigator initialRouteName="MainScreen">
         {/* Add your drawer screens here */}
         <Drawer.Screen name="Home" component={MainScreen} 
-                  options={{ headerTitle: (props) => <LogoTitle {...props} />,
-                  title: 'Vichaar',
+                  options={{ headerTitle:  (props) => <LogoTitle {...props} />
+                  ,
+                  headerTitleContainerStyle:{
+                    marginStart:150,
+                  },
+                  // title: 'Vichaaraadeen kaidee',
                   headerStyle: {
                     backgroundColor: 'black',
                   },
+                  // headerRightContainerStyle: {
+                  //   marginStart:'50%',
+                  //   marginRight:50,
+                  //   marginLeft:0,
+                  // },
                   headerTintColor: 'skyblue',      
-                  headerTitleStyle: {
-                    fontWeight: 'bold',
-                  },
+                  // headerTitleStyle: {
+                  //   fontWeight: 'bold',
+                  // },
+                  // headerTitleAlign:'right',
+            //       headerRight: () => (
+            //         <TouchableHighlight 
+            //         //   onPress={() => navigation.navigate('ProfileScreen')}
+      
+            //          >
+            //           {/* <Image
+            //             style={{ width: 50, height: 50 }}   
+            //             source={require('../assets/user1.png')}
+            //   />     */}
+            //   {/* <Text style={styles.htext}>Vichaaraadeen kaidee</Text> */}
+            //         </TouchableHighlight>
+            // ),
+                
                 }}
 
         />
@@ -74,4 +102,17 @@ function DrawerScreen() {
   );
 }
 
-export default DrawerScreen;
+const styles=StyleSheet.create({
+  htext:{
+    color:'skyblue',
+    fontWeight: 'bold',
+    fontSize: 24,
+    flexDirection:'row',
+    paddingTop:7,
+    paddingLeft:20,
+    },
+    headalign: {
+      flexDirection:'row',
+    }
+
+})
