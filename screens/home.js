@@ -18,15 +18,18 @@ export default function Home({navigation}) {
         <View style={styles.bg}>
         <Text style={{fontSize:28,color:'white',textAlign:'center',}}  onPress={() => navigation.navigate('Bail')}>Bail</Text>
         </View>
+        <View style={styles.bot}>
+        <Text
+        title="bot"
+        onPress={() => navigation.navigate('LawBot')}
+      > Chatbot</Text>
+        </View>
+      
       </View>
     );
   }   
-      
-{/*   
-      <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate('ProfileScreen')}
-      /> */}
+       
+     
 
   const styles=StyleSheet.create({
     texts:{
@@ -48,8 +51,14 @@ export default function Home({navigation}) {
       width:150,
       borderWidth:3,
       backgroundColor:"black",
-      
-      
+    },
+    bot: {
+      height:100,
+      width:100,
+      borderRadius:'50%',
+      marginTop:250,
+      marginLeft:400,
+      backgroundColor:'yellow',
     }
   })
 
