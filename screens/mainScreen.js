@@ -20,7 +20,7 @@ export default function MainScreen({navigation}) {
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: 'tomato' }}
     >
-       <Tab.Screen name="HomeS" component={HomeStackScreen} 
+       <Tab.Screen name="HomeStackScreen" component={HomeStackScreen} 
       options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({ color }) => (
@@ -65,7 +65,7 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-       <Tab.Screen name="Rehabilation" component={ProfileScreen} 
+       <Tab.Screen name="ProfileScreen" component={ProfileScreen} 
       options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color }) => (

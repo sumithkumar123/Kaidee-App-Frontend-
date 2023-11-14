@@ -6,11 +6,17 @@ import Kha from "../information/Kha";
 import Raj from "../information/Raj";
 import Ramachandra from "../information/Ramachandra";
 import Say from "../information/Say";
+import SignupScreen from '../screens/signUpScreen';
+import ReviewDetails from '../screens/reviewDetails';
+import Dashboard from '../information/dashboardinfo';
+
 const LawyerStack = createNativeStackNavigator();
+
 export default function LawyerStackScreen(){
     return(
-        <LawyerStack.Navigator>
-            <LawyerStack.Screen name="lawyersinfo" component={Lawyers} options={{headerShown:false}}/>
+        <LawyerStack.Navigator initialRouteName='Lawyers'>
+            <LawyerStack.Screen name="Lawyers" component={Lawyers}/>
+           
             <LawyerStack.Screen name="Ramachandra" component={Ramachandra} />
             <LawyerStack.Screen name="Gold" component={Gold} />
             <LawyerStack.Screen name="Raj" component={Raj} />

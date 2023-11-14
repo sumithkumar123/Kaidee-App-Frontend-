@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 import React from 'react';
 import {Text,View, Button,StyleSheet,Card,Image,TouchableOpacity} from 'react-native';
 // import Lawyers from '../information/lawyersinfo';
@@ -12,7 +19,7 @@ export default function Home({navigation}) {
       <View style={styles.main}>
          <View style={styles.bg}>
 
-               <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('Lawyers')}>Lawyers</Text>
+               <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LawyerStackScreen')}>Lawyers</Text>
         </View>
         <View style={styles.bg}>
           <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('Dashboard')}>Dashboard</Text>

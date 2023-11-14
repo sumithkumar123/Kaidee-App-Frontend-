@@ -9,7 +9,7 @@ const SignupScreen = ({ navigation }) => {
     <ImageBackground
       source={require('../assets/jail1.png')} 
       style={styles.backgroundImage}
-    >
+    >  
       <View style={styles.container}>
         <Text style={styles.title}>REGISTER NOW</Text>
         <TextInput
