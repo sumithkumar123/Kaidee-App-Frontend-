@@ -38,7 +38,7 @@ function LogoTitle() {
   return (
     <View style={styles.headalign}>
          <Image
-      style={{ width: 50, height: 50 , borderRadius:'50%',}}
+      style={{ width: 50, height: 50 }}
       source={require('../assets/title.gif')}
     />
     <Text style={styles.htext}>Vichaaraadeen Kaidee</Text>
@@ -54,7 +54,7 @@ export default function DrawerScreen({navigation}) {
   return (
       <Drawer.Navigator initialRouteName="MainScreen">
         {/* Add your drawer screens here */}
-        <Drawer.Screen name="Home" component={MainScreen} 
+        <Drawer.Screen name="MainScreen" component={MainScreen} 
                   options={{ headerTitle:  (props) => <LogoTitle {...props} />
                   ,
                   headerTitleContainerStyle:{
