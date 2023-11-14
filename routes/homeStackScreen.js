@@ -19,13 +19,9 @@ export default function HomeStackScreen() {
           options={{ headerShown: false }}
       />
         <HomeStack.Screen name="Lawyers" component={Lawyers} />
-        <HomeStack.Screen name="Dashboard" component={Dashboard} 
-      
-       />
-        <HomeStack.Screen name="Bail" component={Bail} 
-      
-       />
-      <HomeStack.Screen name="ProfileScreen" component={ProfileScreen} 
+        <HomeStack.Screen name="Dashboard" component={Dashboard} />
+        <HomeStack.Screen name="Bail" component={Bail} />
+        <HomeStack.Screen name="ProfileScreen" component={ProfileScreen} 
       options={{
         title: 'ProfileScreen',
         headerStyle: {

@@ -27,7 +27,7 @@ function rightsScreen({ navigation }) {
 function legalaidScreen({ navigation }) {
   return (
     <View>
-      <Text>leagalaidScreen</Text>
+      <Text>LeagalAidScreen</Text>
     </View>
   );
 }

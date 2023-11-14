@@ -19,9 +19,7 @@ const Tab = createBottomTabNavigator();
 
 export default function MainScreen({navigation}) {
     return (
-      <Tab.Navigator 
-
-      >
+      <Tab.Navigator>
       <Tab.Screen name="HomeS" component={HomeStackScreen} 
       options={{
         // headerTitle: (props) => <LogoTitle {...props} />,
@@ -30,7 +28,6 @@ export default function MainScreen({navigation}) {
           backgroundColor: 'black',
         }, 
         headerTintColor: '#fff',
-       
         headerTitleStyle: {
           fontWeight: 'bold',
         },  
