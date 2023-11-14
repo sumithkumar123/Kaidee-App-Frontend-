@@ -18,11 +18,9 @@ export default function HomeStackScreen() {
     <HomeStack.Navigator>
       
       <HomeStack.Screen name="Home" component={Home} 
-       options={{ headerShown: false }}
-       />
-        <HomeStack.Screen name="Lawyers" component={Lawyers} 
-       
-       />
+          options={{ headerShown: false }}
+      />
+        <HomeStack.Screen name="Lawyers" component={Lawyers} />
         <HomeStack.Screen name="Dashboard" component={Dashboard} 
       
        />
