@@ -9,14 +9,13 @@ import Say from "../information/Say";
 import SignupScreen from '../screens/signUpScreen';
 import ReviewDetails from '../screens/reviewDetails';
 import Dashboard from '../information/dashboardinfo';
-
+ 
 const LawyerStack = createNativeStackNavigator();
 
 export default function LawyerStackScreen(){
     return(
         <LawyerStack.Navigator initialRouteName='Lawyers'>
             <LawyerStack.Screen name="Lawyers" component={Lawyers}/>
-           
             <LawyerStack.Screen name="Ramachandra" component={Ramachandra} />
             <LawyerStack.Screen name="Gold" component={Gold} />
             <LawyerStack.Screen name="Raj" component={Raj} />
