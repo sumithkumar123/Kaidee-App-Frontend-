@@ -25,21 +25,24 @@ export default function HomeStackScreen() {
       <HomeStack.Screen name="Home" component={Home} 
           options={{ headerShown: false }}
       />
-        <HomeStack.Screen name="LawyerStackScreen" component={LawyerStackScreen} />
+        <HomeStack.Screen name="Lawyers" component={Lawyers} />
         <HomeStack.Screen name="Dashboard" component={Dashboard} 
       
        />
         <HomeStack.Screen name="Bail" component={Bail} 
       
        />
-         {/* <HomeStack.Screen name="Gold" component={Gold}  />
-         
-
-         <HomeStack.Screen name="Ramachandra" component={Ramachandra} />
-            <HomeStack.Screen name="Raj" component={Raj} />
-            <HomeStack.Screen name="Kha" component={Kha} />
-            <HomeStack.Screen name="Say" component={Say} /> */}
- 
+      <HomeStack.Screen name="ProfileScreen" component={ProfileScreen} 
+      options={{
+        title: 'ProfileScreen',
+        headerStyle: {
+          backgroundColor: '#879090',
+        },
+        headerTintColor: 'black',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }} />
     </HomeStack.Navigator>
   );
 }

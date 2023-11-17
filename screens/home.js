@@ -6,30 +6,25 @@
 
 
 import React from 'react';
-import {Text,View, Button,StyleSheet,Card,Image,TouchableOpacity} from 'react-native';
-// import Lawyers from '../information/lawyersinfo';
-// import Dashboard from '../information/dashboardinfo';
-// import Bail from '../information/bailinfo';
-// import { responsiveWidth ,responsiveHeight,responsiveScreenFontSize} from 'react-native-responsive-dimensions';
-
+import {Text,View, Button,StyleSheet,Card,Image} from 'react-native';
+import Lawyers from '../information/lawyersinfo';
+import Dashboard from '../information/dashboardinfo';
+import Bail from '../information/bailinfo';
 
 export default function Home({navigation}) {
     return (
 
       <View style={styles.main}>
          <View style={styles.bg}>
-
-               <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LawyerStackScreen')}>Lawyers</Text>
+        <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('Lawyers')}>Lawyers</Text>
         </View>
         <View style={styles.bg}>
           <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('Dashboard')}>Dashboard</Text>
             
         </View>
 
-        <View style={styles.bot}>
-        <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
-      <Image style={styles.image} source={require('../assets/bot.gif')} />
-    </TouchableOpacity>
+        <View style={styles.bg}>
+        <Text style={{fontSize:28,color:'white',textAlign:'center',}}  onPress={() => navigation.navigate('Bail')}>Bail</Text>
         </View>
       
       </View>

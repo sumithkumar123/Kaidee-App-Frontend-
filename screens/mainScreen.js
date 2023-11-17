@@ -13,14 +13,11 @@ import Dashboard from '../information/dashboardinfo';
 const Tab = createMaterialBottomTabNavigator();
 
 export default function MainScreen({navigation}) {
-  return (
-    <Tab.Navigator
-      initialRouteName="HomeStackScreen"
-      activeColor="#e91e63"
-      labelStyle={{ fontSize: 12 }}
-      style={{ backgroundColor: 'tomato' }}
-    >
-       <Tab.Screen name="HomeStackScreen" component={HomeStackScreen} 
+    return (
+      <Tab.Navigator 
+
+      >
+      <Tab.Screen name="HomeS" component={HomeStackScreen} 
       options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({ color }) => (
@@ -33,7 +30,7 @@ export default function MainScreen({navigation}) {
         }, 
         headerTintColor: '#fff',
        
-        headerTitleStyle: { 
+        headerTitleStyle: {
           fontWeight: 'bold',
         },  
 

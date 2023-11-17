@@ -15,5 +15,5 @@ export default function Say() {
                 <Button title= "Detail" onPress={() => openURL("https://en.wikipedia.org/wiki/Fali_Sam_Nariman")}/>
             </View>
         </View>
-    ) 
+    )     
 }
