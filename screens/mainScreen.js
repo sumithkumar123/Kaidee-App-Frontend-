@@ -49,7 +49,7 @@ export default function MainScreen({navigation}) {
   )
         
       }}  />
-       <Tab.Screen name="Dashboard" component={Dashboard} 
+       <Tab.Screen name="updates" component={Dashboard} 
       
       options={{
         tabBarLabel: 'Updates',

@@ -39,17 +39,7 @@ export default function HomeStackScreen() {
             <HomeStack.Screen name="Raj" component={Raj} />
             <HomeStack.Screen name="Kha" component={Kha} />
             <HomeStack.Screen name="Say" component={Say} /> */}
-      <HomeStack.Screen name="ProfileScreen" component={ProfileScreen} 
-      options={{
-        title: 'ProfileScreen',
-        headerStyle: {
-          backgroundColor: '#879090',
-        },
-        headerTintColor: 'black',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }} />
+ 
     </HomeStack.Navigator>
   );
 }

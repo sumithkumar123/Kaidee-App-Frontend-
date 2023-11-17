@@ -7,7 +7,6 @@ import Raj from "../information/Raj";
 import Ramachandra from "../information/Ramachandra";
 import Say from "../information/Say";
 import SignupScreen from '../screens/signUpScreen';
-import ReviewDetails from '../screens/reviewDetails';
 import Dashboard from '../information/dashboardinfo';
 
 const LawyerStack = createNativeStackNavigator();
