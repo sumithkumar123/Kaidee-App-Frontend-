@@ -8,14 +8,13 @@ import Ramachandra from "../information/Ramachandra";
 import Say from "../information/Say";
 import SignupScreen from '../screens/signUpScreen';
 import Dashboard from '../information/dashboardinfo';
-
+ 
 const LawyerStack = createNativeStackNavigator();
 
 export default function LawyerStackScreen(){
     return(
         <LawyerStack.Navigator initialRouteName='Lawyers'>
             <LawyerStack.Screen name="Lawyers" component={Lawyers}/>
-           
             <LawyerStack.Screen name="Ramachandra" component={Ramachandra} />
             <LawyerStack.Screen name="Gold" component={Gold} />
             <LawyerStack.Screen name="Raj" component={Raj} />

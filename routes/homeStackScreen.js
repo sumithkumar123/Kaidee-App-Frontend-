@@ -19,19 +19,25 @@ const HomeStack = createNativeStackNavigator();
 
 export default function HomeStackScreen() {
   return (
-   
     <HomeStack.Navigator>
       
       <HomeStack.Screen name="Home" component={Home} 
           options={{ headerShown: false }}
       />
-        <HomeStack.Screen name="Lawyers" component={Lawyers} />
+        <HomeStack.Screen name="LawyerStackScreen" component={LawyerStackScreen} />
         <HomeStack.Screen name="Dashboard" component={Dashboard} 
       
        />
         <HomeStack.Screen name="Bail" component={Bail} 
       
        />
+         {/* <HomeStack.Screen name="Gold" component={Gold}  />
+         
+
+         <HomeStack.Screen name="Ramachandra" component={Ramachandra} />
+            <HomeStack.Screen name="Raj" component={Raj} />
+            <HomeStack.Screen name="Kha" component={Kha} />
+            <HomeStack.Screen name="Say" component={Say} /> */}
       <HomeStack.Screen name="ProfileScreen" component={ProfileScreen} 
       options={{
         title: 'ProfileScreen',
