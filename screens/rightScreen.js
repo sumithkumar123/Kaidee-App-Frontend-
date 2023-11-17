@@ -8,16 +8,16 @@ export default function rightScreen({ navigation }){
         <Text onPress={() => navigation.navigate('rightToAccomadate')}>Right to Accomadate</Text>
       </View>
       <View style={styles.container}>
-        <Text>Right to Shelter</Text>
+        <Text onPress={() => navigation.navigate('rightToShelter')}>Right to Shelter</Text>
       </View>
       <View style={styles.container}>
-        <Text>Right to be employed</Text>
+        <Text onPress={() => navigation.navigate('rightToEmploy')}>Right to be employed</Text>
       </View>
       <View style={styles.container}>
-        <Text>Right to get clothing</Text>
+        <Text onPress={() => navigation.navigate('rightToCloth')}>Right to get clothing</Text>
       </View>
       <View style={styles.container}>
-        <Text>Right to Human diginity</Text>
+        <Text onPress={() => navigation.navigate('rightToHuman')}>Right to Human diginity</Text>
       </View>
     </ScrollView>
   );
