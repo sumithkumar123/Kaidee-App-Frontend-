@@ -7,7 +7,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 // import myTabs from './tabRoutes';
 import MainScreen from './mainScreen';
-import Rehabilation from './Rehabilation';
+import RehabilationHome from './rehabilationHome';
 import LawBot from './lawbot';
 import rightStackScreen from '../routes/rightStackScreen';
 
@@ -74,18 +74,18 @@ export default function DrawerScreen({navigation}) {
                   //   fontWeight: 'bold',
                   // },
                   // headerTitleAlign:'right',
-            //       headerRight: () => (
-            //         <TouchableHighlight 
-            //         //   onPress={() => navigation.navigate('ProfileScreen')}
+                  headerRight: () => (
+                    <TouchableHighlight 
+                      onPress={() => navigation.navigate('ProfileScreen')}
       
-            //          >
-            //           {/* <Image
-            //             style={{ width: 50, height: 50 }}   
-            //             source={require('../assets/user1.png')}
-            //   />     */}
-            //   {/* <Text style={styles.htext}>Vichaaraadeen kaidee</Text> */}
-            //         </TouchableHighlight>
-            // ),
+                     >
+                       <Image
+                        style={{ width: 50, height: 50 }}   
+                        source={require('../assets/user1.png')}
+              />     
+              {/* <Text style={styles.htext}>Vichaaraadeen kaidee</Text> */}
+                    </TouchableHighlight>
+            ),
                 
                 }}
 
@@ -93,7 +93,7 @@ export default function DrawerScreen({navigation}) {
         <Drawer.Screen name="rights" component={rightStackScreen} />
         <Drawer.Screen name="legalaid" component={legalaidScreen} />
         <Drawer.Screen name="LawBot" component={LawBot} />
-        <Drawer.Screen name="Rehabiltation" component={Rehabilation} />
+        <Drawer.Screen name="RehabiltationHome" component={RehabilationHome} />
         <Drawer.Screen name="Settings" component={SettingsScreen} />
 
         {/* Add more screens as needed */}

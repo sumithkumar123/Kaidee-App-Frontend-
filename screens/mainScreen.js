@@ -24,26 +24,26 @@ export default function MainScreen({navigation}) {
           <MaterialCommunityIcons name="home" color={color} size={26} />
         ),
         // headerTitle: (props) => <LogoTitle {...props} />,
-        title: 'Home Screen',
-        headerStyle: {
-          backgroundColor: 'black',
-        }, 
-        headerTintColor: '#fff',
+  //       title: 'Home Screen',
+  //       headerStyle: {
+  //         backgroundColor: 'black',
+  //       }, 
+  //       headerTintColor: '#fff',
        
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },  
+  //       headerTitleStyle: {
+  //         fontWeight: 'bold',
+  //       },  
 
-          headerRight: () => (
-          <TouchableHighlight
-            onPress={() => navigation.navigate('ProfileScreen')}
-          >
-            <Image
-              style={{ width: 50, height: 50 }}
-              source={require('../assets/user1.png')}
-    />    
-          </TouchableHighlight>
-  )
+  //         headerRight: () => (
+  //         <TouchableHighlight
+  //           onPress={() => navigation.navigate('ProfileScreen')}
+  //         >
+  //           <Image
+  //             style={{ width: 50, height: 50 }}
+  //             source={require('../assets/user1.png')}
+  //   />    
+  //         </TouchableHighlight>
+  // )
         
       }}  />
        <Tab.Screen name="updates" component={Dashboard} 
@@ -68,14 +68,14 @@ export default function MainScreen({navigation}) {
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="account" color={color} size={26} />
         ),
-        title: 'ProfileScreen',
-        headerStyle: {
-          backgroundColor: 'black',
-        },
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTintColor: '#fff',
+        // title: 'ProfileScreen',
+        // headerStyle: {
+        //   backgroundColor: 'black',
+        // },
+        // headerTitleStyle: {
+        //   fontWeight: 'bold',
+        // },
+        // headerTintColor: '#fff',
       }} />
     </Tab.Navigator>  
     );
