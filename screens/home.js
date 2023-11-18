@@ -10,14 +10,14 @@ import {Text,View, Button,StyleSheet,Card,Image} from 'react-native';
 import Lawyers from '../information/lawyersinfo';
 import Dashboard from '../information/dashboardinfo';
 import Bail from '../information/bailinfo';
-import ImageSlider from './imageSlider';
+// import ImageSlider from './imageSlider';
 
 export default function Home({navigation}) {
     return (
-
+ 
       <View style={styles.main}>
          <View style={styles.bg}>
-          <ImageSlider />
+          {/* <ImageSlider /> */}
         <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LawyerStackScreen')}>Lawyers</Text>
         </View>
         <View style={styles.bg}>
