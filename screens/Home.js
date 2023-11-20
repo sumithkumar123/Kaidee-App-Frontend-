@@ -12,7 +12,7 @@ export default function Home({navigation}) {
       <View style={styles.main}>
          <View style={styles.bg}>
 
-               <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('Lawyers')}>Lawyers</Text>
+               <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LawyerStackScreen')}>Lawyers</Text>
         </View>
         <View style={styles.bg}>
           <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('Dashboard')}>Dashboard</Text>
@@ -57,13 +57,12 @@ export default function Home({navigation}) {
     bot: { 
       height:60,
       width:60,
-      borderRadius:'50%',
       marginTop:250,
       backgroundColor:'black',
     },
     image: {
       height: 60,
       width:60,
-      borderRadius:'50%',
+    
     },
   })

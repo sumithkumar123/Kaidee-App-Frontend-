@@ -6,10 +6,10 @@ export default function rightToAccomadate() {
         <View style={{backgroundColor: '#fff',flexDirection:'column',alignItems:"center",justifyContent:"center",}}>
             <Text style={{fontSize:40,color:'black',textAlign:'center',padding: 20,}} > About right to accomadate</Text>
             <View style={{flexDirection: 'row',}}>
-              <p style={{fontSize:30,color:'black',width: 300,padding: 5,}}>The prisioners have the right to be provided accommodation constructed and maintained accordingbto the provision of the Prisions Act,1894.
+              <Text style={{fontSize:30,color:'black',width: 300,padding: 5,}}>The prisioners have the right to be provided accommodation constructed and maintained accordingbto the provision of the Prisions Act,1894.
                 The Model Prison Mnual (2016) also mentions that living conditions in every prison shall be compitable with human diginity in all aspects such aspects
                 accomadation, hygiene,sanitation,food,clothing,medical facilities,etc.
-              </p>
+              </Text>
               <Image source={{uri: 'https://psacunion.ca/sites/psac/files/brochure_cover.png',
                           width: 500,
                           height: 700,}}/>

@@ -10,7 +10,7 @@ import MainScreen from './mainScreen';
 import Rehabilation from './Rehabilation';
 import LawBot from './lawbot';
 import rightStackScreen from '../routes/rightStackScreen';
-import laywerStackScreen from '../routes/laywerStackScreen';
+import laywerStackScreen from '../routes/LaywerStackScreen';
 
 function SettingsScreen({ navigation }) {
   return (
@@ -39,7 +39,7 @@ function LogoTitle() {
   return (
     <View style={styles.headalign}>
          <Image
-      style={{ width: 50, height: 50 , borderRadius:'50%',}}
+      style={{ width: 50, height: 50 , }}
       source={require('../assets/title.gif')}
     />
     <Text style={styles.htext}>Vichaaraadeen Kaidee</Text>

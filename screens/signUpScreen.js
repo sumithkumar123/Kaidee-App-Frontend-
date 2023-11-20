@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
      fontFamily: "Roboto",
   },
   inp1: {
-    borderRadius: 5,
+
     borderWidth: 2,
     height: 40,
     width: 200,

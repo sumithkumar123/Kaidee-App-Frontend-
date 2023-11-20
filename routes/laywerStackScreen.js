@@ -4,7 +4,7 @@ import lawyersinfo from '../information/lawyersinfo';
 import laywerOne from '../information/laywerOne';
 const laywerStack= createNativeStackNavigator();
 
-export default function laywerStackScreen() {
+export default function LaywerStackScreen() {
   return (
     <laywerStack.Navigator >
       <laywerStack.Screen name="lawyersinfo" component={lawyersinfo} options={{ headerShown: false }} />

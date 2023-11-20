@@ -6,8 +6,10 @@ export default function rightToHuman() {
         <View style={{backgroundColor: '#fff',flexDirection:'column',alignItems:"center",justifyContent:"center",}}>
             <Text style={{fontSize:40,color:'black',textAlign:'center',padding: 20,}} > About right to Human</Text>
             <View style={{flexDirection: 'row',}}>
-              <p style={{fontSize:30,color:'black',width: 300,padding: 5,}}>Right to be treated as a human diginity 
-              </p>
+              <Text style={{fontSize:30,color:'black',width: 300,padding: 5,}}>Right to be treated as a human being and as a person; this right has been streesed
+              and recommended by the supreme court of india which has categorical declared that prisioners shall not be treated as non-persons.
+              right to integrity of body; immunity from use of repression and personal abuse, whether by custodial staff or by prisioners.
+              </Text>
               <Image source={{uri: 'https://psacunion.ca/sites/psac/files/brochure_cover.png',
                           width: 500,
                           height: 700,}}/>
