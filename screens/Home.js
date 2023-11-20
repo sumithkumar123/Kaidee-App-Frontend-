@@ -10,7 +10,7 @@ export default function Home({navigation}) {
     return (
 
       <View style={styles.main}>
-         <View style={styles.bg}>
+           <View style={styles.bg}>
 
                <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LawyerStackScreen')}>Lawyers</Text>
         </View>
