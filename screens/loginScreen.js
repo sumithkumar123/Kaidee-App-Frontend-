@@ -4,7 +4,7 @@ import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from 'reac
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+ 
   return (
     <ImageBackground
       source={require('../assets/jail1.png')} 
