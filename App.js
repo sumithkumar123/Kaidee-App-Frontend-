@@ -11,6 +11,7 @@ import HomeStackScreen from './routes/homeStackScreen';
 import LoginStackScreen from './routes/loginStackScreen';
 import MainScreen from './screens/mainScreen';
 import DrawerScreen from './screens/drawer';
+import FirstScreen from './screens/firstscreen';
 
 const Stack = createNativeStackNavigator(); 
  //hell
@@ -18,8 +19,9 @@ export default function App() {
   return (
     <NavigationContainer> 
      
-      <Stack.Navigator initialRouteName="LoginStackScreen"
+      <Stack.Navigator initialRouteName="FirstScreen"
       screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Screen" component={FirstScreen} />
         <Stack.Screen name="LoginStackScreen" component={LoginStackScreen} />
         {/* <Stack.Screen name="DrawerScreen" component={DrawerScreen} /> */}
 

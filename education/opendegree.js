@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet,View,Text ,ScrollView} from "react-native";
+import { StyleSheet,View,Text} from "react-native";
+import { ScrollView } from 'react-native-gesture-handler';
 import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function OpenDegree() {

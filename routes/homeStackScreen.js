@@ -2,13 +2,13 @@ import React from 'react';
 import {Text, TextInput, View, Button,StyleSheet} from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import { NavigationContainer } from '@react-navigation/native';
-import Home from '../screens/home';
+import Home from '../screens/Home';
 import ProfileScreen from '../screens/profileScreen';
 import MyDrawer from '../screens/drawer';
 // import Lawyers from '../information/lawyersinfo';
 import Dashboard from '../information/dashboardinfo';
 import Bail from '../information/bailinfo';
-import LaywerStackScreen from './LaywerStackScreen';
+import LaywerStackScreen from './laywerStackScreen';
 const HomeStack = createNativeStackNavigator();
 
 export default function HomeStackScreen() {

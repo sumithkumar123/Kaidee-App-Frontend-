@@ -9,8 +9,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import MainScreen from './mainScreen';
 import Rehabilation from './Rehabilation';
 import LawBot from './lawbot';
-import rightStackScreen from '../routes/rightStackScreen';
-import laywerStackScreen from '../routes/LaywerStackScreen';
+import RightStackScreen from '../routes/rightStackScreen';
+import LaywerStackScreen from '../routes/laywerStackScreen';
 
 function SettingsScreen({ navigation }) {
   return (
@@ -91,8 +91,8 @@ export default function DrawerScreen({navigation}) {
                 }}
 
         />
-        <Drawer.Screen name="rights" component={rightStackScreen} />
-        <Drawer.Screen name="legalaid" component={laywerStackScreen} />
+        <Drawer.Screen name="rights" component={RightStackScreen} />
+        <Drawer.Screen name="legalaid" component={LaywerStackScreen} />
         <Drawer.Screen name="LawBot" component={LawBot} />
         <Drawer.Screen name="Rehabiltation" component={Rehabilation} />
         <Drawer.Screen name="Settings" component={SettingsScreen} />
