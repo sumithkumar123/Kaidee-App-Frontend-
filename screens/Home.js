@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text,View, Button,StyleSheet,Card,Image,TouchableOpacity} from 'react-native';
+
 // import Lawyers from '../information/lawyersinfo';
 // import Dashboard from '../information/dashboardinfo';
 // import Bail from '../information/bailinfo';

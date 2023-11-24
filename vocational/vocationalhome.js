@@ -1,26 +1,65 @@
-import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import Carpentry from './carpentry'
 import Welding from './welding'
-import { ScrollView } from 'react-native-gesture-handler';
+// import { ScrollView } from 'react-native-gesture-handler';
 import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function VocationalHome({navigation}) {
   return (
     <View style={styles.screen}>
+    <Text style={styles.headtext}>Vocational Programs</Text>
+   <View style={styles.works1}>
+    
+
+     <TouchableOpacity onPress={() => navigation.navigate('Carpentry')}>
+       <View style={styles.buttonContainer}>
+       <View style={styles.buttonbox}>
+
+         <Image
+           style={styles.buttonImage}
+           source={require('../assets/hacksaw.gif')}  // Replace with the actual path to your image
+         />
+       </View>
+       <Text style={styles.textcont}>Carpentry</Text>
+
+       </View>
+
+     </TouchableOpacity>
+
+     <TouchableOpacity onPress={() => navigation.navigate('Welding')}>
+       <View style={styles.buttonContainer}>
+       <View style={styles.buttonbox}>
+
+         <Image
+           style={styles.buttonImage}
+           source={require('../assets/welding.gif')}  // Replace with the actual path to your image
+         />
+
+         </View>
+         <Text style={styles.textcont}>Welding</Text>
+
+       </View>
+     </TouchableOpacity>
+
+     <TouchableOpacity onPress={() => navigation.navigate('Tailoring')}>
+       <View style={styles.buttonContainer}>
+       <View style={styles.buttonbox}>
+
+         <Image
+           style={styles.buttonImage}
+           source={require('../assets/tailor.gif')}  // Replace with the actual path to your image
+         />
+       </View>
+       <Text style={styles.textcont}>Tailoring</Text>
+
+       </View>
+
+     </TouchableOpacity>
+   </View>
       <View style={styles.works}>
-      <Text style={styles.headtext}>Vocational Programs</Text>
-
-        <ScrollView>
-      <Text style={styles.texts} onPress={() => navigation.navigate('Carpentry')}>Carpentry</Text>
-      <Text style={styles.texts} onPress={() => navigation.navigate('Welding')}>Welding</Text>
-      <Text style={styles.texts} onPress={() => navigation.navigate('Tailoring')}>Tailoring</Text>
-
-      </ScrollView>
-      </View>
-
-      <View style={styles.works}>
-
+        
+      
       <Text style={styles.headtext}>About Vocational Education </Text>
       <ScrollView>
         <Text style={styles.textcont}>
@@ -42,8 +81,8 @@ export default function VocationalHome({navigation}) {
 }
 
 
-const styles=StyleSheet.create({
 
+const styles = StyleSheet.create({
   texts: {
     flexDirection: 'row',
     borderWidth: 2,
@@ -53,39 +92,74 @@ const styles=StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 60,
     margin: 20,
-    textAlign:'center',
-    backgroundColor:'black',
-    color:'skyblue',
-
+    textAlign: 'center',
+    backgroundColor: 'black',
+    color: 'skyblue',
   },
   textcont: {
-    textAlign:'center',
-    padding:2,
+    textAlign: 'center',
+    padding: 2,
+    fontWeight: 'bold',
+
   },
   works: {
-    padding:10,
-    borderWidth:2,
-    borderColor:'black',
-    margin:20,
-    justifyContent:'center',
-    alignItems:'center',
-    height:300,
-    backgroundColor:'white',
+    padding: 10,
+    borderWidth: 2,
+    borderColor: '#333',
+    margin: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 300,
+    backgroundColor: 'white',
   },
   headtext: {
-    fontSize:26,
-    textAlign:'center',
-    fontWeight:'bold',
+    fontSize: 26,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginBottom:10,
   },
-  youtube:{
+  youtube: {
+    flexDirection: 'column',
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 20,
+    marginTop: 10,
+    padding: 10,
+  },
+  buttonImage: {
+    width: 70,  // Adjust the width as needed
+    height: 70, 
+    padding:5,
+    margin:5,
+    // Adjust the height as needed
+  },
+  buttonbox:{
+    borderColor:'#eee',
+    borderWidth:2,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  buttonContainer: {
+    padding: 50, 
     flexDirection:'column',
-    alignItems:"center",
-    justifyContent:"center",
-    marginBottom:20, 
-    marginTop:10,
+    textAlign:'center', 
     padding:10,
+    width:120,// Add padding here
+    marginRight:20,
+    marginLeft:20,
   },
   screen: {
-    backgroundColor:'white',
-  }
-})
+    backgroundColor: 'white',
+  },
+  works1: {
+    padding: 60,
+    borderWidth: 2,
+    borderColor: 'white',
+    margin: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 200,
+    backgroundColor: 'white',
+    flexDirection: 'row',
+  },
+});

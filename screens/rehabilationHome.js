@@ -11,30 +11,47 @@ export default function RehabilationHome({ navigation }) {
 
         <TouchableOpacity onPress={() => navigation.navigate('VocationalStackScreen')}>
           <View style={styles.buttonContainer}>
+          <View style={styles.buttonbox}>
+
             <Image
               style={styles.buttonImage}
-              source={require('../assets/favicon.png')}  // Replace with the actual path to your image
+              source={require('../assets/influence.gif')}  // Replace with the actual path to your image
             />
           </View>
-          <Text>bolm</Text>
+          <Text style={styles.textcont}>Vocational-Training</Text>
+
+          </View>
+
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('EducationalStackScreen')}>
           <View style={styles.buttonContainer}>
+          <View style={styles.buttonbox}>
+
             <Image
               style={styles.buttonImage}
-              source={require('../assets/hacksaw.gif')}  // Replace with the actual path to your image
+              source={require('../assets/mortarboard.gif')}  // Replace with the actual path to your image
             />
+
+            </View>
+            <Text style={styles.textcont}>Educational-Training</Text>
+
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('MentalHealthStackScreen')}>
           <View style={styles.buttonContainer}>
+          <View style={styles.buttonbox}>
+
             <Image
               style={styles.buttonImage}
-              source={require('../assets/favicon.png')}  // Replace with the actual path to your image
+              source={require('../assets/mental-health.gif')}  // Replace with the actual path to your image
             />
           </View>
+          <Text style={styles.textcont}>Mental Health Support</Text>
+
+          </View>
+
         </TouchableOpacity>
       </View>
 
@@ -76,11 +93,13 @@ const styles = StyleSheet.create({
   textcont: {
     textAlign: 'center',
     padding: 2,
+    fontWeight: 'bold',
+
   },
   works: {
     padding: 10,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#333',
     margin: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -102,10 +121,25 @@ const styles = StyleSheet.create({
   },
   buttonImage: {
     width: 70,  // Adjust the width as needed
-    height: 70,  // Adjust the height as needed
+    height: 70, 
+    padding:5,
+    margin:5,
+    // Adjust the height as needed
+  },
+  buttonbox:{
+    borderColor:'#eee',
+    borderWidth:2,
+    justifyContent:'center',
+    alignItems:'center',
   },
   buttonContainer: {
-    padding: 50,  // Add padding here
+    padding: 50, 
+    flexDirection:'column',
+    textAlign:'center', 
+    padding:10,
+    width:120,// Add padding here
+    marginRight:20,
+    marginLeft:20,
   },
   screen: {
     backgroundColor: 'white',
@@ -113,7 +147,7 @@ const styles = StyleSheet.create({
   works1: {
     padding: 60,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: 'white',
     margin: 20,
     justifyContent: 'center',
     alignItems: 'center',
