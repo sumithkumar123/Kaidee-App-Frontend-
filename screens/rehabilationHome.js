@@ -32,7 +32,7 @@ export default function RehabilationHome({ navigation }) {
           <View style={styles.buttonContainer}>
             <Image
               style={styles.buttonImage}
-              source={require('../assets/favicon.png')}  // Replace with the actual path to your image
+              source={require('../assets/hypnotherapy.gif')}  // Replace with the actual path to your image
             />
           </View>
         </TouchableOpacity>
