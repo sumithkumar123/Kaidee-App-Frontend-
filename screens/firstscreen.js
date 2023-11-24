@@ -1,56 +1,67 @@
 import React from 'react';
-import {Text,View, Button,StyleSheet,Card,Image,TouchableOpacity,ImageBackground} from 'react-native';
-const image = {uri:"https://wallpapers.com/images/featured/jail-background-qbmoztosi7bm3tcu.jpg"}
+import { Text, View, Button, StyleSheet, ImageBackground, TouchableOpacity, Image } from 'react-native';
 
+const image = { uri: "https://wallpapers.com/images/featured/jail-background-qbmoztosi7bm3tcu.jpg" }
 
-export default function FirstScreen({navigation}) {
-    return (
-
-      <ImageBackground  source={image} 
+export default function FirstScreen({ navigation }) {
+  return (
+    <ImageBackground
+      source={image}
       resizeMode='cover'
       style={styles.backgroundImage}>
-        <View style={styles.main}>
-           <View style={styles.bg}>
+      <View style={styles.main}>
+        <TouchableOpacity
+          style={styles.bg}
+          onPress={() => navigation.navigate('LoginStackScreen')}>
+          
+            <Image style={styles.buttonImage} source={require('../assets/favicon.png')} />
+        
+          
+        </TouchableOpacity>
+        
+        <Text style={{ fontSize: 28, color: 'white', textAlign: 'center',flexDirection:'column' }}>Lawyers</Text>
+        <TouchableOpacity
+          style={styles.bg}
+          onPress={() => navigation.navigate('LoginStackScreen')}>
+         
+          <Text style={{ fontSize: 28, color: 'white', textAlign: 'center' }}>Undertrial</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+  );
+}
 
-               <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LoginStackScreen')}>Lawyers</Text>
-            </View>
-            <View style={styles.bg}>
-              <Text style={{fontSize:28,color:'white',textAlign:'center',}} onPress={() => navigation.navigate('LoginStackScreen')}>undertrial</Text>
-            
-            </View>
-        </View>
+const styles = StyleSheet.create({
+  texts: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  main: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: 'column',
 
-       </ImageBackground>
-    );
-  }   
-       
-     
-
-  const styles=StyleSheet.create({
-    texts:{
-      flex:1,
-      alignItems:"center",
-      justifyContent:"center",
-    },
-    main:{
-      flex:1,
-      alignItems:"center",
-      justifyContent:"center",
-      
-    },
-    bg:{
-      height:70,
-      width:200,
-      //borderWidth:3,
-      backgroundColor:"purple",
-      alignItems:'center',
-      justifyContent:'center',
-      margin:15,
-      borderRadius:15,
-    },
-    backgroundImage: {
-        flex: 1,
-        resizeMode: 'cover', 
-      },
- 
-  })
+  },
+  bg: {
+    height: 150,
+    width: 150,
+    backgroundColor: "rgba(128,0,128,0.5)", // Purple color with 50% transparency
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 15,
+    borderRadius: 75, // Make it half of the height to make it circular
+    overflow: 'hidden', // Clip the content inside the circle
+  },
+  buttonImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 40, // Make it half of the width/height to make it circular
+    marginBottom: 10,
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+});
