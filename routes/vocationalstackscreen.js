@@ -15,6 +15,7 @@ export default function VocationalStackScreen() {
   return (
     <VocationalStack.Navigator initialRouteName='VocationalHome' >
             <VocationalStack.Screen name="VocationalHome" component={VocationalHome} 
+          
     />
         <VocationalStack.Screen name="Carpentry" component={Carpentry} 
     />

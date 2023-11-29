@@ -4,6 +4,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function RehabilationHome({ navigation }) {
   return (
+    <ScrollView>
     <View style={styles.screen}>
        <Text style={styles.headtext}>Rehabilation Programs</Text>
       <View style={styles.works1}>
@@ -73,6 +74,8 @@ export default function RehabilationHome({ navigation }) {
         </ScrollView>
       </View>
     </View>
+    </ScrollView>
+
   );
 }
 
@@ -90,12 +93,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     color: 'skyblue',
   },
+
   textcont: {
     textAlign: 'center',
     padding: 2,
     fontWeight: 'bold',
-
   },
+
   works: {
     padding: 10,
     borderWidth: 2,
@@ -105,11 +109,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 300,
     backgroundColor: 'white',
+    borderRadius:7,
   },
+ 
   headtext: {
     fontSize: 26,
-    textAlign: 'center',
+    textAlign: 'left',
     fontWeight: 'bold',
+    margin:10,
   },
   youtube: {
     flexDirection: 'column',
@@ -120,24 +127,25 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonImage: {
-    width: 70,  // Adjust the width as needed
+    width: 70,  
     height: 70, 
     padding:5,
     margin:5,
-    // Adjust the height as needed
+    
   },
   buttonbox:{
-    borderColor:'#eee',
+    borderColor:'black',
     borderWidth:2,
     justifyContent:'center',
     alignItems:'center',
+    borderRadius:7,
   },
   buttonContainer: {
     padding: 50, 
     flexDirection:'column',
     textAlign:'center', 
     padding:10,
-    width:120,// Add padding here
+    width:120,
     marginRight:20,
     marginLeft:20,
   },
@@ -147,12 +155,14 @@ const styles = StyleSheet.create({
   works1: {
     padding: 60,
     borderWidth: 2,
-    borderColor: 'white',
-    margin: 20,
+    borderColor: '#eee',
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     height: 200,
     backgroundColor: 'white',
     flexDirection: 'row',
+    borderRadius:7,
+
   },
 });

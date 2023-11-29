@@ -1,12 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
-import Carpentry from './carpentry'
-import Welding from './welding'
-// import { ScrollView } from 'react-native-gesture-handler';
 import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function VocationalHome({navigation}) {
   return (
+    <ScrollView>
     <View style={styles.screen}>
     <Text style={styles.headtext}>Vocational Programs</Text>
    <View style={styles.works1}>
@@ -18,10 +16,10 @@ export default function VocationalHome({navigation}) {
 
          <Image
            style={styles.buttonImage}
-           source={require('../assets/hacksaw.gif')}  // Replace with the actual path to your image
+           source={require('../assets/hacksaw.gif')}  
          />
        </View>
-       <Text style={styles.textcont}>Carpentry</Text>
+       <Text style={styles.buttontext}>Carpentry</Text>
 
        </View>
 
@@ -33,11 +31,11 @@ export default function VocationalHome({navigation}) {
 
          <Image
            style={styles.buttonImage}
-           source={require('../assets/welding.gif')}  // Replace with the actual path to your image
+           source={require('../assets/welding.gif')}  
          />
 
          </View>
-         <Text style={styles.textcont}>Welding</Text>
+         <Text style={styles.buttontext}>Welding</Text>
 
        </View>
      </TouchableOpacity>
@@ -48,23 +46,23 @@ export default function VocationalHome({navigation}) {
 
          <Image
            style={styles.buttonImage}
-           source={require('../assets/tailor.gif')}  // Replace with the actual path to your image
+           source={require('../assets/tailor.gif')}  
          />
        </View>
-       <Text style={styles.textcont}>Tailoring</Text>
+       <Text style={styles.buttontext}>Tailoring</Text>
 
        </View>
 
      </TouchableOpacity>
    </View>
-      <View style={styles.works}>
-        
-      
-      <Text style={styles.headtext}>About Vocational Education </Text>
-      <ScrollView>
-        <Text style={styles.textcont}>
-        Vocational education is education that prepares people for a skilled craft as an artisan, trade as a tradesperson, or work as a technician. Vocational education can also be seen as that type of education
-         given to an individual to prepare that individual to be gainfully employed or self employed with requisite skill.
+   <Text style={styles.headtext}>About Vocational Education </Text>
+   <View style={styles.works}>     
+   <View style={styles.works}>   
+   <Text>Image slider</Text>  
+    </View>
+        <Text style={styles.textcont}> 
+       Vocational education is education that prepares people for a skilled craft as an artisan, trade as a tradesperson, or work as a technician. Vocational education can also be seen as that type of education
+      given to an individual to prepare that individual to be gainfully employed or self employed with requisite skill.
         </Text>
         <View style={styles.youtube}>        
             <YoutubePlayer 
@@ -74,12 +72,11 @@ export default function VocationalHome({navigation}) {
                 videoId={'sNaHN4tZmRk'}
             />
             </View>
-      </ScrollView>
       </View>
     </View>
+    </ScrollView>
   )
 }
-
 
 
 const styles = StyleSheet.create({
@@ -96,27 +93,43 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     color: 'skyblue',
   },
-  textcont: {
-    textAlign: 'center',
-    padding: 2,
-    fontWeight: 'bold',
 
+  textcont: {
+    textAlign: 'left',
+    padding: 1,
   },
+
   works: {
-    padding: 10,
+    // padding: 10,
+    // borderWidth: 2,
+    // borderColor: '#333',
+    // margin: 20,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // height: 300,
+    // backgroundColor: 'white',
+    // borderRadius:7,
+
+    padding: 60,
     borderWidth: 2,
-    borderColor: '#333',
-    margin: 20,
+    borderColor: '#eee',
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 300,
     backgroundColor: 'white',
+    flexDirection: 'column',
+    borderRadius:7,
   },
+
   headtext: {
     fontSize: 26,
+    textAlign: 'left',
+    fontWeight: 'bold',
+    margin:10,
+  },
+  buttontext:{
     textAlign: 'center',
     fontWeight: 'bold',
-    marginBottom:10,
   },
   youtube: {
     flexDirection: 'column',
@@ -127,24 +140,25 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonImage: {
-    width: 70,  // Adjust the width as needed
+    width: 70,  
     height: 70, 
     padding:5,
     margin:5,
-    // Adjust the height as needed
+    
   },
   buttonbox:{
-    borderColor:'#eee',
+    borderColor:'black',
     borderWidth:2,
     justifyContent:'center',
     alignItems:'center',
+    borderRadius:7,
   },
   buttonContainer: {
     padding: 50, 
     flexDirection:'column',
     textAlign:'center', 
     padding:10,
-    width:120,// Add padding here
+    width:120,
     marginRight:20,
     marginLeft:20,
   },
@@ -154,12 +168,14 @@ const styles = StyleSheet.create({
   works1: {
     padding: 60,
     borderWidth: 2,
-    borderColor: 'white',
-    margin: 20,
+    borderColor: '#eee',
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     height: 200,
     backgroundColor: 'white',
     flexDirection: 'row',
+    borderRadius:7,
+
   },
 });
