@@ -4,6 +4,7 @@ import YoutubePlayer from "react-native-youtube-iframe";
 
 export default function RehabilationHome({ navigation }) {
   return (
+    <ScrollView>
     <View style={styles.screen}>
        <Text style={styles.headtext}>Rehabilation Programs</Text>
       <View style={styles.works1}>
@@ -11,30 +12,47 @@ export default function RehabilationHome({ navigation }) {
 
         <TouchableOpacity onPress={() => navigation.navigate('VocationalStackScreen')}>
           <View style={styles.buttonContainer}>
+          <View style={styles.buttonbox}>
+
             <Image
               style={styles.buttonImage}
-              source={require('../assets/favicon.png')}  // Replace with the actual path to your image
+              source={require('../assets/influence.gif')}  // Replace with the actual path to your image
             />
           </View>
-          <Text>bolm</Text>
+          <Text style={styles.textcont}>Vocational-Training</Text>
+
+          </View>
+
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('EducationalStackScreen')}>
           <View style={styles.buttonContainer}>
+          <View style={styles.buttonbox}>
+
             <Image
               style={styles.buttonImage}
-              source={require('../assets/hacksaw.gif')}  // Replace with the actual path to your image
+              source={require('../assets/mortarboard.gif')}  // Replace with the actual path to your image
             />
+
+            </View>
+            <Text style={styles.textcont}>Educational-Training</Text>
+
           </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate('MentalHealthStackScreen')}>
           <View style={styles.buttonContainer}>
+          <View style={styles.buttonbox}>
+
             <Image
               style={styles.buttonImage}
-              source={require('../assets/hypnotherapy.gif')}  // Replace with the actual path to your image
+              source={require('../assets/mental-health.gif')}  // Replace with the actual path to your image
             />
           </View>
+          <Text style={styles.textcont}>Mental Health Support</Text>
+
+          </View>
+
         </TouchableOpacity>
       </View>
 
@@ -56,6 +74,8 @@ export default function RehabilationHome({ navigation }) {
         </ScrollView>
       </View>
     </View>
+    </ScrollView>
+
   );
 }
 
@@ -73,24 +93,30 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     color: 'skyblue',
   },
+
   textcont: {
     textAlign: 'center',
     padding: 2,
+    fontWeight: 'bold',
   },
+
   works: {
     padding: 10,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: '#333',
     margin: 20,
     justifyContent: 'center',
     alignItems: 'center',
     height: 300,
     backgroundColor: 'white',
+    borderRadius:7,
   },
+ 
   headtext: {
     fontSize: 26,
-    textAlign: 'center',
+    textAlign: 'left',
     fontWeight: 'bold',
+    margin:10,
   },
   youtube: {
     flexDirection: 'column',
@@ -101,11 +127,27 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   buttonImage: {
-    width: 70,  // Adjust the width as needed
-    height: 70,  // Adjust the height as needed
+    width: 70,  
+    height: 70, 
+    padding:5,
+    margin:5,
+    
+  },
+  buttonbox:{
+    borderColor:'black',
+    borderWidth:2,
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:7,
   },
   buttonContainer: {
-    padding: 50,  // Add padding here
+    padding: 50, 
+    flexDirection:'column',
+    textAlign:'center', 
+    padding:10,
+    width:120,
+    marginRight:20,
+    marginLeft:20,
   },
   screen: {
     backgroundColor: 'white',
@@ -113,12 +155,14 @@ const styles = StyleSheet.create({
   works1: {
     padding: 60,
     borderWidth: 2,
-    borderColor: 'black',
-    margin: 20,
+    borderColor: '#eee',
+    margin: 10,
     justifyContent: 'center',
     alignItems: 'center',
     height: 200,
     backgroundColor: 'white',
     flexDirection: 'row',
+    borderRadius:7,
+
   },
 });

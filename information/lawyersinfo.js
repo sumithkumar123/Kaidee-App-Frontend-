@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet,View,Text,Button,Alert,ScrollView} from "react-native";
 import laywerOne from "./laywerOne";
-export default function Lawyers() {
+export default function Lawyers({navigation}) {
     return (
         <ScrollView>
                 <View style={styles.main}>
