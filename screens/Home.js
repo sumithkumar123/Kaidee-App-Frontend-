@@ -24,9 +24,7 @@ export default function Home({navigation}) {
         <View style={styles.topbar}>
           <Text style={styles.headtext}>DashBoard</Text>
           <View style={styles.bot}>
-        <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
-      <Image style={styles.image} source={require('../assets/bot.gif')} />
-    </TouchableOpacity>
+        
       </View>
       </View>
         <View style={styles.works1}>
@@ -114,16 +112,17 @@ export default function Home({navigation}) {
 
 
       </View>
-        {/* <View style={styles.bot}>
-        <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
-      <Image style={styles.image} source={require('../assets/bot.gif')} />
-    </TouchableOpacity>
-      </View> */}
+        
       </View>
       </View>
+       
       </ScrollView>
 
-    );
+    );<View style={styles.bot}>
+    <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
+  <Image style={styles.image} source={require('../assets/bot.gif')} />
+</TouchableOpacity>
+  </View> 
   }   
        
      
@@ -145,15 +144,17 @@ export default function Home({navigation}) {
       height:50,
       width:150,
       //borderWidth:3,
-      backgroundColor:"black",
+      //backgroundColor:"black",
       alignItems:'center',
       justifyContent:'center'
     },
     bot: { 
-      height:50,
-      width:50,
-      marginLeft:'70%',
-      backgroundColor:'black',
+      position: 'absolute',
+      bottom: 40, // Adjust this value to set the bottom margin
+      right: 10, // Adjust this value to set the right margin
+      height: 50,
+      width: 50,
+     // backgroundColor: 'black',
     },
     image: {
       height: 60,
