@@ -1,11 +1,56 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 const image = {uri:"https://wallpapers.com/images/featured/jail-background-qbmoztosi7bm3tcu.jpg"}
 
 
 const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
+
+    const [fdata, setFdata] = useState({
+    name: '',
+    email: '',
+    password: '',
+    cpassword: '',
+    dob: '',
+})
+
+const [errormsg, setErrormsg] = useState(null);
+
+const Sendtobackend = () => {
+    console.log(fdata);
+    if (
+        fdata.email == '' ||
+        fdata.password == '') {
+        setErrormsg('All fields are required');
+        return;
+    }
+    else {
+                  fetch('http://10.0.2.2:3000/signin', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify(fdata)
+                  })
+                      .then(res => res.json()).then(
+                          data => {
+                              // console.log(data);
+                              if (data.error) {
+                                  // alert('Invalid Credentials')
+                                  setErrormsg(data.error);
+                              }
+                              else {
+                                  // console.log(data.udata);
+                                  alert('Logged in successfully');
+                                  navigation.navigate('DrawerScreen');
+                              }
+                          }
+                      )
+              }
+          }
+      
+      
+      
 
   return (
     <ImageBackground
@@ -17,10 +62,14 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.title}>UNDERTRIAL PRISONERS</Text>
         <View style={styles.content}>
           <Text style={styles.hea}></Text>
+            {
+            errormsg ? <Text style={styles.errormessage}>{errormsg}</Text> : null
+         }
           <TextInput
             style={styles.inp}
-            placeholder="Email"
-            onChangeText={(text) => setEmail(text)}
+            placeholder="email"
+          onPressIn={() => setErrormsg(null)}
+         onChangeText={(text) => setFdata({ ...fdata, email: text })}
             keyboardType="email-address"
             autoCapitalize="none"
           />
@@ -28,20 +77,25 @@ const LoginScreen = ({ navigation }) => {
             style={styles.inp}
             placeholder="Password"
             secureTextEntry
-            onChangeText={(text) => setPassword(text)}
-          />
-          <View style={styles.butt}>
-            <Button title="Login" onPress={() => navigation.navigate('DrawerScreen')} />
-          </View>
-          <Text style={styles.forgotPassword}>Forgot Password?</Text>
-          <View style={styles.signupContainer}>
-            <Text style={styles.bothea}>Don't have an account?</Text>
-            <Text style={styles.signupText} onPress={() => navigation.navigate('SignUpScreen')}>
-              Sign up here
-            </Text>
+            onPressIn={() => setErrormsg(null)}
+            onChangeText={(text) => setFdata({ ...fdata, password: text })}          />
+            <View style={styles.butt}>
+              <Text style={styles.forgotPassword}>Forgot Password?</Text>
+       <TouchableOpacity
+                         onPress={() => {
+                             Sendtobackend();
+                         }}
+                    >
+                         <Text
+                              styles={styles.login}
+                         >Login</Text>
+                     </TouchableOpacity>
+         
+       <Text  onPress={() => navigation.navigate('SignUpScreen')}>Don't have an account? Sign up here</Text> 
+       </View>
+
           </View>
         </View>
-      </View>
     </ImageBackground>
   );
 };
@@ -88,12 +142,14 @@ const styles = StyleSheet.create({
   butt: {
     width: 200,
     marginVertical: 20,
+    flexDirection:'column',
   },
   forgotPassword: {
     color: '#3498db',
     fontSize: 16,
     marginBottom: 20,
     color: '#fff',
+    flexDirection:'end',
   },
   signupContainer: {
     flexDirection: 'row',
@@ -104,10 +160,20 @@ const styles = StyleSheet.create({
     marginRight: 5,
     color: '#fff',
   },
+  login:{
+    textAlign:'center',
+    fontSize:22,
+    padding:10,
+    backgroundColor:'skyblue',
+    color:'brown',
+  },
   signupText: {
     fontSize: 16,
     color: '#3498db',
   },
+  errormessage: {
+    color: 'red',
+  }
 });
 
 export default LoginScreen;
