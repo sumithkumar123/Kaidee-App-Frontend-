@@ -144,6 +144,7 @@
 
 
 import React, { useState } from 'react';
+
 import { View, Text, TextInput, TouchableOpacity , StyleSheet } from 'react-native';
 
 const SignupScreen = ({ navigation }) => {
@@ -156,6 +157,7 @@ const SignupScreen = ({ navigation }) => {
 })
 
 const [errormsg, setErrormsg] = useState(null);
+
 
 const Sendtobackend = () => {
     // console.log(fdata);
@@ -216,11 +218,12 @@ const Sendtobackend = () => {
         onPressIn={() => setErrormsg(null)}
         onChangeText={(text) => setFdata({ ...fdata, email: text })}
           />
-       <TextInput style={styles.inp1}
+   
+       { <TextInput style={styles.inp1}
         placeholder="dob"
         onPressIn={() => setErrormsg(null)}
         onChangeText={(text) => setFdata({ ...fdata, dob: text })}
-          />
+          /> }
       <TextInput style={styles.inp1}
         placeholder="password"
         secureTextEntry
@@ -265,7 +268,10 @@ const styles = StyleSheet.create({
     width: 200,
     padding: 5,
     margin: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+
   butt1: {
     flexDirection: 'row',
     justifyContent: 'center',
