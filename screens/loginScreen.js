@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { View, Text, TextInput, Button, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 const image = {uri:"https://wallpapers.com/images/featured/jail-background-qbmoztosi7bm3tcu.jpg"}
 
@@ -15,6 +16,7 @@ const LoginScreen = ({ navigation }) => {
 })
 
 const [errormsg, setErrormsg] = useState(null);
+const [hidePassword, setHidePassword] = useState(true); 
 
 const Sendtobackend = () => {
     console.log(fdata);
@@ -73,29 +75,42 @@ const Sendtobackend = () => {
             keyboardType="email-address"
             autoCapitalize="none"
           />
+            <View style={styles.passwordContainer}>
+
           <TextInput
             style={styles.inp}
             placeholder="Password"
-            secureTextEntry
+            secureTextEntry={hidePassword}
+            hidePassword={hidePassword}
+            setHidePassword={setHidePassword}
             onPressIn={() => setErrormsg(null)}
             onChangeText={(text) => setFdata({ ...fdata, password: text })}          />
+           
+            <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={() => setHidePassword(!hidePassword)}
+          >
+            <Icon name={hidePassword ? 'eye-slash' : 'eye'} size={20} color="#808080" />
+          </TouchableOpacity>
+          </View>
             <View style={styles.butt}>
               <Text style={styles.forgotPassword}>Forgot Password?</Text>
-       <TouchableOpacity
-                         onPress={() => {
-                             Sendtobackend();
-                         }}
-                    >
-                         <Text
-                              styles={styles.login}
-                         >Login</Text>
-                     </TouchableOpacity>
+              <TouchableOpacity
+              
+  onPress={() => {
+    Sendtobackend();
+  }}
+>
+  <Text style={{ ...styles.login, backgroundColor: 'grey',height:'auto' }}>Login</Text>
+</TouchableOpacity>
+
          
        <Text  onPress={() => navigation.navigate('SignUpScreen')}>Don't have an account? Sign up here</Text> 
        </View>
 
           </View>
         </View>
+        
     </ImageBackground>
   );
 };
@@ -111,6 +126,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.3)', 
   },
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
   title: {
     fontSize: 24,
     fontWeight: 'bold',
@@ -143,9 +163,10 @@ const styles = StyleSheet.create({
     width: 200,
     marginVertical: 20,
     flexDirection:'column',
+    color:'#fff',
   },
   forgotPassword: {
-    color: '#3498db',
+   // color: '#3498db',
     fontSize: 16,
     marginBottom: 20,
     color: '#fff',
@@ -164,13 +185,20 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontSize:22,
     padding:10,
-    backgroundColor:'skyblue',
-    color:'brown',
+    backgroundColor:'white',
+    color:'white',
   },
   signupText: {
     fontSize: 16,
-    color: '#3498db',
+    color: '#fff',
   },
+
+  eyeIcon: {
+    position: 'absolute',
+    right: 15,
+  //  color:'black'
+  },
+
   errormessage: {
     color: 'red',
   }
