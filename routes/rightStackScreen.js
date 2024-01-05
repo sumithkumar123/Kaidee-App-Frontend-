@@ -8,7 +8,7 @@ import rightToShelter from '../screens/rightToShelter';
 import rightToHuman from '../screens/rightToHuman';
 const rightStack= createNativeStackNavigator();
 
-export default function rightStackScreen() {
+export default function RightStackScreen() {
   return (
     <rightStack.Navigator >
       <rightStack.Screen name="rightScreen" component={rightScreen} options={{ headerShown: false }} />

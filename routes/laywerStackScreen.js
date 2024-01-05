@@ -1,14 +1,15 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import lawyersinfo from '../information/lawyersinfo';
-import laywerOne from '../information/laywerOne';
-const laywerStack= createNativeStackNavigator();
+import lawyerOne from '../information/laywerOne';
+import Lawyers from '../information/lawyersinfo';
+const lawyerStack= createNativeStackNavigator();
 
-export default function LaywerStackScreen() {
+export default function lawyerStackScreen() {
   return (
-    <laywerStack.Navigator >
-      <laywerStack.Screen name="lawyersinfo" component={lawyersinfo} options={{ headerShown: false }} />
-      <laywerStack.Screen name="ramachandra" component={laywerOne} />
-    </laywerStack.Navigator>
+    <lawyerStack.Navigator >
+      <lawyerStack.Screen name="lawyersinfo" component={Lawyers} options={{ headerShown: false }} />
+      <lawyerStack.Screen name="ramachandra" component={lawyerOne} />
+    </lawyerStack.Navigator>
   );
 }

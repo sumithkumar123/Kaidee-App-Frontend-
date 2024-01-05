@@ -10,7 +10,7 @@ import { ImageComponent } from 'react-native';
 
 
 
-const EducationStack = createNativeStackNavigator();
+const EducationStack = createNativeStackNavigator(); 
 
 export default function EducationalStackScreen() {
   return (

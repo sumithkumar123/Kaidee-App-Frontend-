@@ -12,13 +12,17 @@ const RehabilationStack=createNativeStackNavigator();
 export default function Rehabilation() {
     return (
         <RehabilationStack.Navigator 
-        screenOptions={{ headerShown: false }} 
+        
         initialRouteName="RehabilationHome"> 
 
-         <RehabilationStack.Screen name="RehabilationHome" component={RehabilationHome} />
-          <RehabilationStack.Screen name="VocationalStackScreen" component={VocationalStackScreen} />
-          <RehabilationStack.Screen name="EducationalStackScreen" component={EducationalStackScreen} />
-          <RehabilationStack.Screen name="MentalHealthStackScreen" component={MentalHealthStackScreen} />
+         <RehabilationStack.Screen name="RehabilationHome" component={RehabilationHome} 
+         options={{headerShown:false}} />
+          <RehabilationStack.Screen name="VocationalStackScreen" component={VocationalStackScreen} 
+          options={{headerShown:false}} />
+          <RehabilationStack.Screen name="EducationalStackScreen" component={EducationalStackScreen} 
+           options={{headerShown:false}} />
+          <RehabilationStack.Screen name="MentalHealthStackScreen" component={MentalHealthStackScreen} 
+           options={{headerShown:false}} />
 
 
           {/* <Stack.Screen name="DrawerScreen" component={DrawerScreen} /> */}

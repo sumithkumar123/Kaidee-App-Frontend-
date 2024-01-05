@@ -7,14 +7,15 @@ import { StyleSheet,View,Text ,ScrollView} from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 import VocationalHome from '../vocational/vocationalhome';
 
-
+ 
 
 const VocationalStack = createNativeStackNavigator();
 
 export default function VocationalStackScreen() {
   return (
-    <VocationalStack.Navigator >
+    <VocationalStack.Navigator initialRouteName='VocationalHome' >
             <VocationalStack.Screen name="VocationalHome" component={VocationalHome} 
+          
     />
         <VocationalStack.Screen name="Carpentry" component={Carpentry} 
     />
