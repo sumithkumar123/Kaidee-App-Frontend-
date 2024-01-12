@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import VocationalStackScreen from "../routes/vocationalstackscreen";
 import EducationalStackScreen from "../routes/educationalStackScreen";
 import RehabilationHome from "./rehabilationHome";
-import MentalHealthStackScreen from "../routes/mentaHealthStackScreen";
 
 const RehabilationStack=createNativeStackNavigator(); 
 
@@ -21,8 +20,8 @@ export default function Rehabilation() {
           options={{headerShown:false}} />
           <RehabilationStack.Screen name="EducationalStackScreen" component={EducationalStackScreen} 
            options={{headerShown:false}} />
-          <RehabilationStack.Screen name="MentalHealthStackScreen" component={MentalHealthStackScreen} 
-           options={{headerShown:false}} />
+          {/* <RehabilationStack.Screen name="MentalHealthStackScreen" component={MentalHealthStackScreen} 
+           options={{headerShown:false}} /> */}
 
 
           {/* <Stack.Screen name="DrawerScreen" component={DrawerScreen} /> */}

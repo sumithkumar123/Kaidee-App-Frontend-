@@ -6,8 +6,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from '../routes/homeStackScreen';
-import LawBot from './lawbot';
-import Rehabilation from './Rehabilation';
 import ProfileScreen from './profileScreen';
 import Dashboard from '../information/dashboardinfo';
 const Tab = createMaterialBottomTabNavigator();

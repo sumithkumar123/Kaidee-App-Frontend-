@@ -14,7 +14,7 @@ export default function FirstScreen({ navigation }) {
         <View>
           <TouchableOpacity
             style={styles.bg}
-            onPress={() => navigation.navigate('lawyerLoginStackScreen')}>
+            onPress={() => navigation.navigate('LawyerLoginStackScreen')}>
 
           
             <Text style={{ fontSize: 28, color: 'white', textAlign: 'center' }}>Lawyers</Text>

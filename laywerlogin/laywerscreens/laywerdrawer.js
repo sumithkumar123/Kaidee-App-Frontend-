@@ -2,10 +2,6 @@ import React from 'react';
 import { View, Text, Button , Image, TouchableHighlight, StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-// import myTabs from './tabRoutes';
 import lawyerStackScreen from '../laywerroutes/laywerlaywerStackScreen';
 import lawyerMainScreen from './laywermainScreen';
 

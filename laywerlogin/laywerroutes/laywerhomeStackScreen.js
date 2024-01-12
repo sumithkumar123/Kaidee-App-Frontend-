@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import lawyerOne from '../../information/laywerOne';
 import lawyerDashboard from '../laywerinformation/laywerdashboardinfo';
 import lawyerBail from '../laywerinformation/laywerbailinfo';
-import lawyerlawyerStackScreen from './laywerlaywerStackScreen';
+import LawyerlawyerStackScreen from './laywerlaywerStackScreen';
 import lawyerHome from '../laywerscreens/laywerHome';
 const HomeStack = createNativeStackNavigator();
 
@@ -18,7 +18,7 @@ export default function lawyerHomeStackScreen() {
       <HomeStack.Screen name="Home" component={lawyerHome} 
           options={{ headerShown: false }}
       />
-        <HomeStack.Screen name="LawyerStackScreen" component={lawyerlawyerStackScreen} />
+        <HomeStack.Screen name="LawyerStackScreen" component={LawyerlawyerStackScreen} />
         <HomeStack.Screen name="Dashboard" component={lawyerDashboard}  />
         <HomeStack.Screen name="lawyerOne" component={lawyerOne}  />
         <HomeStack.Screen name="Bail" component={lawyerBail} 

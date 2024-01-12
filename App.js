@@ -2,8 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginStackScreen from './routes/LoginStackScreen';
-import firstStackScreen from './routes/firstStackScreen';
-import lawyerLoginStackScreen from './laywerlogin/laywerroutes/laywerloginStackScreen';
+import FirstStackScreen from './routes/firstStackScreen';
+import LawyerLoginStackScreen from './laywerlogin/laywerroutes/laywerloginStackScreen';
 import FirstScreen from './screens/firstscreen';
 
 const Stack = createNativeStackNavigator(); 
@@ -15,10 +15,9 @@ export default function App() {
       <Stack.Navigator 
       screenOptions={{ headerShown: false }}>
 
-                <Stack.Screen name="firstStackScreen" component={firstStackScreen} />
+                <Stack.Screen name="FirstStackScreen" component={FirstStackScreen} />
                 <Stack.Screen name="FirstScreen" component={FirstScreen} />
-                <Stack.Screen name="laywerLoginStackScreen" component={lawyerLoginStackScreen} />
-
+                <Stack.Screen name="LaywerLoginStackScreen" component={LawyerLoginStackScreen} />
                 <Stack.Screen name="LoginStackScreen" component={LoginStackScreen} />
 
 

@@ -10,7 +10,7 @@ import MainScreen from './mainScreen';
 import Rehabilation from './Rehabilation';
 import LawBot from './lawbot';
 import RightStackScreen from '../routes/rightStackScreen';
-import lawyerStackScreen from '../routes/laywerStackScreen';
+import LawyerStackScreen from '../routes/laywerStackScreen';
 
 function SettingsScreen({ navigation }) {
   return (
@@ -75,7 +75,7 @@ export default function DrawerScreen({navigation}) {
 
         />
         <Drawer.Screen name="rights" component={RightStackScreen} />
-        <Drawer.Screen name="legalaid" component={lawyerStackScreen} />
+        <Drawer.Screen name="legalaid" component={LawyerStackScreen} />
         <Drawer.Screen name="LawBot" component={LawBot} />
         <Drawer.Screen name="Rehabiltation" component={Rehabilation} />
         <Drawer.Screen name="Settings" component={SettingsScreen} />

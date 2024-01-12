@@ -7,7 +7,7 @@ import lawyerDrawerScreen from '../laywerscreens/laywerdrawer';
 
 const LoginStack = createNativeStackNavigator();
 
-export default function lawyerLoginStackScreen() {
+export default function LawyerLoginStackScreen() {
   return (
     <LoginStack.Navigator >
         <LoginStack.Screen name="lawyerLoginScreen" component={lawyerLoginScreen} 

@@ -6,7 +6,7 @@
 // import { StyleSheet,View,Text ,ScrollView} from "react-native";
 // import YoutubePlayer from "react-native-youtube-iframe";
 // import VocationalHome from '../vocational/vocationalhome';
-// import 
+
 
 
 // const MentalHealthStack = createNativeStackNavigator();

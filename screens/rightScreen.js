@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button , StyleSheet, ScrollView } from 'react-native';
 import rightToAccomadate from './rightToAccomadate';
-export default function rightScreen({ navigation }){
+export default function RightScreen({ navigation }){
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text onPress={() => navigation.navigate('rightToAccomadate')}>Right to Accomadate</Text>
+        <Text onPress={() => navigation.navigate('RightToAccomadate')}>Right to Accomadate</Text>
       </View>
       <View style={styles.container}>
-        <Text onPress={() => navigation.navigate('rightToShelter')}>Right to Shelter</Text>
+        <Text onPress={() => navigation.navigate('RightToShelter')}>Right to Shelter</Text>
       </View>
       <View style={styles.container}>
-        <Text onPress={() => navigation.navigate('rightToEmploy')}>Right to be employed</Text>
+        <Text onPress={() => navigation.navigate('RightToEmploy')}>Right to be employed</Text>
       </View>
       <View style={styles.container}>
-        <Text onPress={() => navigation.navigate('rightToCloth')}>Right to get clothing</Text>
+        <Text onPress={() => navigation.navigate('RightToCloth')}>Right to get clothing</Text>
       </View>
       <View style={styles.container}>
-        <Text onPress={() => navigation.navigate('rightToHuman')}>Right to Human diginity</Text>
+        <Text onPress={() => navigation.navigate('RightToHuman')}>Right to Human diginity</Text>
       </View>
     </ScrollView>
   );
