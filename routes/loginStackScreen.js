@@ -24,6 +24,8 @@ export default function LoginStackScreen() {
     <LoginStack.Navigator >
         <LoginStack.Screen name="LoginScreen" component={LoginScreen} 
       options={{ headerShown: false }} />
+        <LoginStack.Screen name="DrawerScreen" component={DrawerScreen} 
+      options={{ headerShown: false }} />
    {/* <LoginStack.Screen name="signUpStackScreen" component={signUpStackScreen} 
       options={{ headerShown: false }} /> */}
   <LoginStack.Screen name="MessagePage" component={MessagePage} 
