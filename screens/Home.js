@@ -8,15 +8,20 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-
+import Carousel from './carousel';
+import { SafeAreaView } from 'react-native-safe-area-context';
 const { width, height } = Dimensions.get('window');
-
 export default function Home({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
         <View style={styles.topbar}>
           <Text style={styles.headtext}>DashBoard</Text>
+          <View>
+          <SafeAreaView>
+            <Carousel/>
+          </SafeAreaView>
+          </View>
           <View style={styles.bot} />
         </View>
         <View style={styles.works1}>
@@ -47,7 +52,6 @@ export default function Home({ navigation }) {
               <Text style={styles.textcont}>Lawyers</Text>
             </View>
           </TouchableOpacity>
-
           <TouchableOpacity
             onPress={() => navigation.navigate('RightStackScreen')}
           >
@@ -59,7 +63,6 @@ export default function Home({ navigation }) {
               <Text style={styles.textcont}>Rights</Text>
             </View>
           </TouchableOpacity>
-
           <TouchableOpacity onPress={() => navigation.navigate('Rehabilation')}>
             <View style={styles.iconContainer}>
               <Image

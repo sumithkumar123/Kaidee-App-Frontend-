@@ -1,6 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginStackScreen from './LoginStackScreen';
+import LoginStackScreen from './loginStackScreen';
 import FirstScreen from '../screens/firstscreen';
 import LawyerLoginStackScreen from '../laywerlogin/laywerroutes/laywerloginStackScreen';
 

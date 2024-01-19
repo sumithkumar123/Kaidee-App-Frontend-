@@ -1,5 +1,3 @@
-
-
 import * as React from 'react';
 import { Text, View ,Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -8,6 +6,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import lawyerHomeStackScreen from '../laywerroutes/laywerhomeStackScreen';
 import lawyerProfileScreen from './laywerprofileScreen';
 import lawyerDashboard from '../laywerinformation/laywerdashboardinfo';
+import searchlawyer from '../../screens/searchlawyer';
+import { MaterialIcons } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 
 export default function lawyerMainScreen({navigation}) {
@@ -78,6 +78,25 @@ export default function lawyerMainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
+      <Tab.Screen name="searchlawyer" component={searchlawyer} 
+      options={{
+        tabBarLabel: 'searchprisoner',
+        tabBarIcon: ({ color }) => (
+          
+          <MaterialIcons name="person-search" size={30} color="black" />
+        ),
+        title: 'searchprisoner',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTintColor: '#fff',
+      }} />
+
+
+
     </Tab.Navigator>  
     );
 }

@@ -209,54 +209,55 @@
 
 import React, { useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { View, Text, TextInput, Button, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, ImageBackground, TouchableOpacityStyleSheet, Image,TouchableOpacity, ActivityIndicator } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const image = { uri: "https://wallpapers.com/images/featured/jail-background-qbmoztosi7bm3tcu.jpg" }
 
+
 const LoginScreen = ({ navigation }) => {
-
-    const [fdata, setFdata] = useState({
-        name: '',
-        email: '',
-        password: '',
-        cpassword: '',
-        dob: '',
-    })
-
+  const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+    const [loading, setLoading] = React.useState(false)
     const [errormsg, setErrormsg] = useState(null);
     const [hidePassword, setHidePassword] = useState(true);
 
-    const Sendtobackend = () => {
-        console.log(fdata);
-        // Commenting out the backend code for now
-        /*
-        if (
-            fdata.email == '' ||
-            fdata.password == ''
-        ) {
-            setErrormsg('All fields are required');
-            return;
-        } else {
+    const handleLogin = () => {
+        if (email == '' || password == '') {
+            alert('Please enter email and password')
+        }
+        else {
+            setLoading(true)
             fetch('http://10.0.2.2:3000/signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(fdata)
+                body: JSON.stringify({
+                    email,
+                    password
+                })
             })
-                .then(res => res.json()).then(
-                    data => {
-                        if (data.error) {
-                            setErrormsg(data.error);
-                        } else {
-                            alert('Logged in successfully');
-                            navigation.navigate('DrawerScreen');
-                        }
+                .then(res => res.json())
+                .then(async data => {
+                    if (data.error) {
+                        setLoading(false)
+                        alert(data.error)
                     }
-                )
+                    else if (data.message == 'Successfully Signed In') {
+                        setLoading(false)
+                        await AsyncStorage.setItem('user', JSON.stringify(data))
+                        navigation.navigate('DrawerScreen', { data })
+                    }
+                })
+                .catch(err => {
+                    setLoading(false)
+                    alert(err)
+                })
         }
-        */
-    }
+      }
 
+    
+    
     return (
         <ImageBackground
             source={image}
@@ -274,7 +275,8 @@ const LoginScreen = ({ navigation }) => {
                         style={styles.inp}
                         placeholder="email"
                         onPressIn={() => setErrormsg(null)}
-                        onChangeText={(text) => setFdata({ ...fdata, email: text })}
+                        onChangeText={(text) => setEmail(text)}
+                       // onChangeText={(text) => setFdata({ ...fdata, email: text })}
                         keyboardType="email-address"
                         autoCapitalize="none"
                     />
@@ -282,11 +284,13 @@ const LoginScreen = ({ navigation }) => {
                         <TextInput
                             style={styles.inp}
                             placeholder="Password"
-                            secureTextEntry={hidePassword}
+                            //secureTextEntry={hidePassword}
                             hidePassword={hidePassword}
                             setHidePassword={setHidePassword}
+                            secureTextEntry={true}
+                onChangeText={(text) => setPassword(text)}
                             onPressIn={() => setErrormsg(null)}
-                            onChangeText={(text) => setFdata({ ...fdata, password: text })}
+//onChangeText={(text) => setFdata({ ...fdata, password: text })}
                         />
                         <TouchableOpacity
                             style={styles.eyeIcon}
@@ -296,15 +300,25 @@ const LoginScreen = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.butt}>
-                        <Text style={styles.forgotPassword}>Forgot Password?</Text>
+                        <Text style={styles.forgotPassword} onPress={()=> navigation.navigate('ForgotPassword_EnterEmail')}>Forgot Password?</Text>
                         {/* <TouchableOpacity */}
                             {/* onPress={() => { */}
                                 {/* Sendtobackend(); */}
                             {/* }} */}
                         {/* > */}
-                            <Text style={{ ...styles.login, backgroundColor: 'grey', height: 'auto' }} onPress={() => navigation.navigate('DrawerScreen')}>Login</Text>
+                            {/* <Text style={{ ...styles.login, backgroundColor: 'grey', height: 'auto' }} onPress={() => navigation.navigate('DrawerScreen')}>Login</Text> */}
+                            {
+                loading ?
+                    <ActivityIndicator size="large" color="white" />
+                    :
+                    <Text style={{ ...styles.login, backgroundColor: 'grey', height: 'auto' }} onPress={
+                        () => handleLogin()
+                    }>
+                        Submit
+                    </Text>
+            }
                         {/* </TouchableOpacity> */}
-                        <Text onPress={() => navigation.navigate('SignUpScreen')}>Don't have an account? Sign up here</Text>
+                        <Text style={{"color":"white"}} onPress={() => navigation.navigate('Signup_EnterEmail')}>Don't have an account? Sign up here</Text>
                     </View>
                 </View>
             </View>
@@ -369,6 +383,7 @@ const LoginScreen = ({ navigation }) => {
         marginBottom: 20,
         color: '#fff',
         flexDirection:'row',
+        justifyContent:'right',
       },
       signupContainer: {
         flexDirection: 'row',

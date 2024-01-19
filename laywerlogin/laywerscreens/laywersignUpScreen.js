@@ -148,13 +148,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity , StyleSheet } from 'react-native';
 
 const lawyerSignupScreen = ({ navigation }) => {
-   const [fdata, setFdata] = useState({
-    name: '',
-    email: '',
-    password: '',
-    cpassword: '',
-    dob: '',
-})
+  
 
 const [errormsg, setErrormsg] = useState(null);
 
@@ -211,30 +205,30 @@ const Sendtobackend = () => {
          <TextInput style={styles.inp1}
         placeholder="name"
         onPressIn={() => setErrormsg(null)}
-        onChangeText={(text) => setFdata({ ...fdata, name: text })}
+      
     />      
       <TextInput style={styles.inp1}
         placeholder="email"
         onPressIn={() => setErrormsg(null)}
-        onChangeText={(text) => setFdata({ ...fdata, email: text })}
+        
           />
    
        { <TextInput style={styles.inp1}
         placeholder="dob"
         onPressIn={() => setErrormsg(null)}
-        onChangeText={(text) => setFdata({ ...fdata, dob: text })}
+       
           /> }
       <TextInput style={styles.inp1}
         placeholder="password"
         secureTextEntry
         onPressIn={() => setErrormsg(null)}
-        onChangeText={(text) => setFdata({ ...fdata, password: text })}
+        
           />
         <TextInput style={styles.inp1}
         placeholder="cpassword"
         secureTextEntry
         onPressIn={() => setErrormsg(null)}
-        onChangeText={(text) => setFdata({ ...fdata, cpassword: text })}
+      
           />
       <View style={styles.butt1}>
       <TouchableOpacity

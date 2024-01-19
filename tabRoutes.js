@@ -19,6 +19,14 @@ function Profile() {
     </View>
   );
 }
+function search() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>search!</Text>
+    </View>
+  );
+  }
+
 
 function Notifications() {
   return (
@@ -27,6 +35,7 @@ function Notifications() {
     </View>
   );
 }
+
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -58,6 +67,17 @@ export default function myTabs() {
           ),
         }}
       />
+      <Tab.Screen
+        name="search"
+        component={search}
+        options={{
+          tabBarLabel: 'search',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="search" color={color} size={26} />
+          ),
+        }}
+      />
+
       <Tab.Screen
         name="Profile"
         component={Profile}

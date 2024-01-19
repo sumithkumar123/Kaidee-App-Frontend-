@@ -11,6 +11,8 @@ import Rehabilation from './Rehabilation';
 import LawBot from './lawbot';
 import RightStackScreen from '../routes/rightStackScreen';
 import LawyerStackScreen from '../routes/laywerStackScreen';
+import { AntDesign } from '@expo/vector-icons';
+import Settings1 from './Settings/Settings1';
 
 function SettingsScreen({ navigation }) {
   return (
@@ -57,6 +59,11 @@ export default function DrawerScreen({navigation}) {
                       >
                         
                        Logout</Text>
+
+                       {/* <AntDesign name="user" size={24} color="white" style={icons1} onPress
+                    ={
+                        () => navigation.navigate('Settings1')
+                    } /> */}
                   
                       </View>
                    

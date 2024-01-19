@@ -8,6 +8,9 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from '../routes/homeStackScreen';
 import ProfileScreen from './profileScreen';
 import Dashboard from '../information/dashboardinfo';
+import searchlawyer from './searchlawyer';
+import { MaterialIcons } from '@expo/vector-icons';
+
 const Tab = createMaterialBottomTabNavigator();
 
 export default function MainScreen({navigation}) {
@@ -78,6 +81,30 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-    </Tab.Navigator>  
+
+      <Tab.Screen name="searchlawyer" component={searchlawyer} 
+      options={{
+        tabBarLabel: 'searchlawyer',
+        tabBarIcon: ({ color }) => (
+          
+          <MaterialIcons name="person-search" size={26} color="black" />
+
+        ),
+        title: 'searchlawyer',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTintColor: '#fff',
+      }} />
+    
+
+
+
+
+    </Tab.Navigator>
+      
     );
 }
