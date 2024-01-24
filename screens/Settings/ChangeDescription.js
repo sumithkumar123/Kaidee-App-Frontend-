@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
-import { containerFull, goback, hr80, logo1 } from '../../CommonCss/pagecss'
-import { formbtn, formHead, formHead2, formHead3, formInput, formTextLinkCenter, formTextLinkRight } from '../../CommonCss/formcss'
+import { containerFull, goback, logo1 } from '../CommonCss/pagecss'
+import { formbtn,formHead2, formInput, } from '../CommonCss/formcss'
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg";
@@ -36,12 +36,12 @@ const ChangeDescription = ({ navigation }) => {
                             if (data.message === "Description Updated Successfully") {
                                 setLoading(false)
                                 alert('Description has been set successfully')
-                                navigation.navigate('Settings_1')
+                                navigation.navigate('Settings1')
                             }
                             else if (data.error === "Invalid Credentials") {
                                 alert('Invalid Credentials')
                                 setLoading(false)
-                                navigation.navigate('Login')
+                                navigation.navigate('LoginScreen')
                             }
                             else {
                                 setLoading(false)
@@ -60,12 +60,11 @@ const ChangeDescription = ({ navigation }) => {
                 })
         }
 
-        // navigation.navigate('Signup_ChoosePassword')
     }
 
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('Settings_1')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('Settings1')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{

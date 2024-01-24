@@ -50,6 +50,12 @@ export default function lawyerDrawerScreen({navigation}) {
                       >
                         
                        Logout</Text>
+                       <AntDesign name="user" size={24} color="white" style={icons1} onPress
+                    ={
+                        () => navigation.navigate('Settings1')
+                    } />
+                
+
                   
                       </View>
                    

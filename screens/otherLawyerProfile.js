@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as MailComposer from 'expo-mail-composer';
 const image={uri:"https://frappecloud.com/files/user.png"};
 
-const otherLawyerProfile = ({ navigation, route }) => {
+const OtherLawyerProfile = ({ navigation, route }) => {
     const [userdata, setUserdata] = React.useState(null)
     
     const [issameuser, setIssameuser] = React.useState(false)
@@ -45,14 +45,14 @@ const otherLawyerProfile = ({ navigation, route }) => {
                 }
                 else {
                     alert('User Not Found')
-                    navigation.navigate('searchlawyer')
+                    navigation.navigate('Searchlawyer')
                     // navigation.navigate('Login')
                 }
             })
             .catch(err => {
                 // console.log(err)
                 alert('Something Went Wrong')
-                navigation.navigate('searchlawyer')
+                navigation.navigate('Searchlawyer')
             })
     }
     useEffect(() => {
@@ -285,7 +285,7 @@ const otherLawyerProfile = ({ navigation, route }) => {
     )
 }
 
-export default otherLawyerProfile
+export default OtherLawyerProfile
 
 const styles = StyleSheet.create({
     container: {

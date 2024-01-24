@@ -6,7 +6,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import lawyerHomeStackScreen from '../laywerroutes/laywerhomeStackScreen';
 import lawyerProfileScreen from './laywerprofileScreen';
 import lawyerDashboard from '../laywerinformation/laywerdashboardinfo';
-import searchlawyer from '../../screens/searchlawyer';
+import Searchlawyer from '../../screens/searchlawyer';
+import MessagePage from '../../screens/MessagePage';
 import { MaterialIcons } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 
@@ -47,10 +48,10 @@ export default function lawyerMainScreen({navigation}) {
   )
         
       }}  />
-       <Tab.Screen name="Dashboard" component={lawyerDashboard} 
+       <Tab.Screen name="MessagePage" component={MessagePage} 
       
       options={{
-        tabBarLabel: 'Updates',
+        tabBarLabel: 'MessagePage',
         tabBarIcon: ({ color }) => (
           <MaterialCommunityIcons name="bell" color={color} size={26} />
         ),
@@ -78,7 +79,7 @@ export default function lawyerMainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-      <Tab.Screen name="searchlawyer" component={searchlawyer} 
+      <Tab.Screen name="Searchlawyer" component={Searchlawyer} 
       options={{
         tabBarLabel: 'searchprisoner',
         tabBarIcon: ({ color }) => (

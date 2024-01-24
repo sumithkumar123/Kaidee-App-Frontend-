@@ -6,7 +6,7 @@ const UserCard = ({ user, navigation }) => {
     return (
         <TouchableOpacity onPress={
             () => {
-                navigation.navigate('otherLawyerProfile', { user: user })
+                navigation.navigate('OtherLawyerProfile', { user: user })
             }
         }>
             <View style={styles.ChatCard}>

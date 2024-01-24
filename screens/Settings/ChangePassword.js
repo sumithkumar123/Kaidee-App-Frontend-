@@ -1,19 +1,16 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ActivityIndicator} from 'react-native'
 import React, { useState } from 'react'
-import { containerFull, goback, hr80, logo1 } from '../../CommonCss/pagecss'
-import { formbtn, formHead, formHead2, formHead3, formInput, formTextLinkCenter, formTextLinkRight } from '../../CommonCss/formcss'
+import { containerFull, goback, logo1 } from '../CommonCss/pagecss'
+import { formbtn, formHead2, formInput, formTextLinkRight } from '../CommonCss/formcss'
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg";
 
 const ChangePassword = ({ navigation }) => {
-
     const [oldpassword, setOldpassword] = useState('')
     const [newpassword, setNewpassword] = useState('')
     const [confirmnewpassword, setConfirmNewpassword] = useState('')
     const [loading, setLoading] = useState(false)
-
-
     const handlePasswordChange = () => {
         if (oldpassword === '' || newpassword === '' || confirmnewpassword === '') {
             alert('Please fill all the fields')
@@ -23,7 +20,6 @@ const ChangePassword = ({ navigation }) => {
         else {
             setLoading(true)
             AsyncStorage.getItem('user')
-
                 .then(data => {
                     fetch('http://10.0.2.2:3000/changepassword', {
                         method: 'POST',
@@ -38,7 +34,7 @@ const ChangePassword = ({ navigation }) => {
                                 setLoading(false)
                                 alert('Password Changed Successfully')
                                 AsyncStorage.removeItem('user')
-                                navigation.navigate('Login')
+                                navigation.navigate('LoginScreen')
                             }
                             else {
                                 alert('Wrong Password')
@@ -49,21 +45,17 @@ const ChangePassword = ({ navigation }) => {
                 })
         }
     }
-
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('Settings_1')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('Settings1')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{
                     color: 'gray',
                     fontSize: 16,
                 }}
-
                 >Go Back</Text>
-
             </TouchableOpacity>
-
             <Image source={image} style={logo1} />
             <Text style={formHead2}>Choose a strong password</Text>
             <TextInput placeholder="Enter Old password" style={formInput} secureTextEntry
@@ -90,9 +82,6 @@ const ChangePassword = ({ navigation }) => {
         </View>
     )
 }
-
-
-
 export default ChangePassword
 
 const styles = StyleSheet.create({})

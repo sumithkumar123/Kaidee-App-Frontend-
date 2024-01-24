@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, StatusBar, TextInput, ScrollView, ActivityIndic
 import React, { useEffect, useState } from 'react'
 import UserCard from './UserCard'
 
-const searchlawyer = ({ navigation }) => {
+const Searchlawyer = ({ navigation }) => {
 
 
     const [keyword, setKeyword] = useState("")
@@ -83,7 +83,7 @@ const searchlawyer = ({ navigation }) => {
     )
 }
 
-export default searchlawyer
+export default Searchlawyer
 
 const styles = StyleSheet.create({
     container: {

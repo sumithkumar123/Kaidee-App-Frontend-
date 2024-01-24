@@ -60,10 +60,10 @@ export default function DrawerScreen({navigation}) {
                         
                        Logout</Text>
 
-                       {/* <AntDesign name="user" size={24} color="white" style={icons1} onPress
+                       <AntDesign name="user" size={24} color="white" style={styles.icons1} onPress
                     ={
                         () => navigation.navigate('Settings1')
-                    } /> */}
+                    } />
                   
                       </View>
                    
@@ -104,6 +104,11 @@ const styles=StyleSheet.create({
     },
     headalign: {
       flexDirection:'row',
-    }
+    },
+    icons1: {
+      //color: 'white',
+      fontSize: 30,
+  },
+
 
 })

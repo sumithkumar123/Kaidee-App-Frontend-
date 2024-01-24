@@ -73,14 +73,14 @@ const MessagePage = ({ navigation, route }) => {
                                     }
                                     else {
                                         alert('User Not Found')
-                                        navigation.navigate('searchlawyer')
+                                        navigation.navigate('Searchlawyer')
                                         // navigation.navigate('Login')
                                     }
                                 })
                                 .catch(err => {
                                     // console.log(err)
                                     alert('Something Went Wrong')
-                                    navigation.navigate('searchlawyer')
+                                    navigation.navigate('Searchlawyer')
                                 })
                         }
                         else {
@@ -154,7 +154,7 @@ const MessagePage = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
             <View style={styles.s1}>
-                <TouchableOpacity onPress={() => navigation.navigate('searchlawyer')} style={styles.goback}>
+                <TouchableOpacity onPress={() => navigation.navigate('Searchlawyer')} style={styles.goback}>
                     <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 </TouchableOpacity>
 
