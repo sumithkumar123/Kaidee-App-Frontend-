@@ -45,14 +45,14 @@ export default function lawyerDrawerScreen({navigation}) {
                         source={require('../assets/title.gif')}
                       />
                       <Text style={styles.htext}>Kaidee</Text>
-                      <Text style={{color:'red', marginLeft:'30%',marginTop:'20'}}
+                      {/* <Text style={{color:'red', marginLeft:'30%',marginTop:'20'}}
                       onPress={() => navigation.navigate('lawyerLoginScreen')}
                       >
                         
-                       Logout</Text>
+                       Logout</Text> */}
                        <AntDesign name="user" size={24} color="white" style={icons1} onPress
                     ={
-                        () => navigation.navigate('Settings1')
+                        () => navigation.navigate('LawyerSettings1')
                     } />
                 
 

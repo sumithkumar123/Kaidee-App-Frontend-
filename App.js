@@ -21,9 +21,23 @@ import ChangeUsername from './screens/Settings/ChangeUsername';
 import EditProfile from './screens/Settings/EditProfile';
 import UploadProfilePicture from './screens/Settings/UploadProfilePicture';
 
+import LawyerSignup_AccountCreated from './laywerlogin/laywerscreens/lawyerSignup/lawyerSignup_AccountCreated';
+import LawyerSignup_ChoosePassword from './laywerlogin/laywerscreens/lawyerSignup/lawyerSignup_ChoosePassword';
 //new stacks
+import LawyerSignup_ChooseUsername from './laywerlogin/laywerscreens/lawyerSignup/lawyerSignup_ChooseUsername';
+import LawyerSignup_EnterEmail from './laywerlogin/laywerscreens/lawyerSignup/lawyerSignup_EnterEmail';
+import LawyerSignup_EnterVerificationCode from './laywerlogin/laywerscreens/lawyerSignup/lawyerSignup_EnterVerificationCode';
+import LawyerForgotPassword_AccountRecovered from './laywerlogin/laywerscreens/lawyerForgotPassword/lawyerForgotPassword_AccountRecovered';
+import LawyerForgotPassword_ChoosePassword from './laywerlogin/laywerscreens/lawyerForgotPassword/lawyerForgotPassword_ChoosePassword';
+import LawyerForgotPassword_EnterEmail from './laywerlogin/laywerscreens/lawyerForgotPassword/lawyerForgotPassword_EnterEmail';
+import LawyerForgotPassword_EnterVerificationCode from './laywerlogin/laywerscreens/lawyerForgotPassword/lawyerForgotPassword_EnterVerificationCode';
 
-
+import LawyerChangeDescription from './laywerlogin/laywerscreens/lawyerSettings/lawyerChangeDescription';
+import LawyerChangePassword from './laywerlogin/laywerscreens/lawyerSettings/lawyerChangePassword';
+import LawyerChangeUsername from './laywerlogin/laywerscreens/lawyerSettings/lawyerChangeUsername';
+import LawyerEditProfile from './laywerlogin/laywerscreens/lawyerSettings/lawyerEditProfile';
+import LawyerUploadProfilePicture from './laywerlogin/laywerscreens/lawyerSettings/lawyerUploadProfilePicture';
+import LawyerSettings1 from './laywerlogin/laywerscreens/lawyerSettings/lawyerSettings1';
 
 const Stack = createNativeStackNavigator(); 
  //hell
@@ -59,9 +73,26 @@ export default function App() {
                 <Stack.Screen name="UploadProfilePicture" component={UploadProfilePicture} />
                 
                 {/* new stacks */}
+                <Stack.Screen name="LawyerSignup_AccountCreated" component={LawyerSignup_AccountCreated} />
+                <Stack.Screen name="LawyerSignup_ChoosePassword" component={LawyerSignup_ChoosePassword} />
+                <Stack.Screen name="LawyerSignup_ChooseUsername" component={LawyerSignup_ChooseUsername} />
+                <Stack.Screen name="LawyerSignup_EnterEmail" component={LawyerSignup_EnterEmail} />
+                <Stack.Screen name="LawyerSignup_EnterVerificationCode" component={LawyerSignup_EnterVerificationCode} />
 
+                <Stack.Screen name="LawyerForgotPassword_EnterEmail" component={LawyerForgotPassword_EnterEmail} />
+                <Stack.Screen name="LawyerForgotPassword_EnterVerificationCode" component={LawyerForgotPassword_EnterVerificationCode} />
+                <Stack.Screen name="LawyerForgotPassword_ChoosePassword" component={LawyerForgotPassword_ChoosePassword} />
+                <Stack.Screen name="LawyerForgotPassword_AccountRecovered" component={LawyerForgotPassword_AccountRecovered} /> 
 
         {/* <Stack.Screen name="DrawerScreen" component={DrawerScreen} /> */}
+
+                <Stack.Screen name="LawyerSettings1" component={LawyerSettings1} />
+                <Stack.Screen name="LawyerChangeDescription" component={LawyerChangeDescription} />
+                <Stack.Screen name="LawyerChangePassword" component={LawyerChangePassword} />
+                <Stack.Screen name="LawyerChangeUsername" component={LawyerChangeUsername} />
+                <Stack.Screen name="LawyerEditProfile" component={LawyerEditProfile} />
+                <Stack.Screen name="LawyerUploadProfilePicture" component={LawyerUploadProfilePicture} />
+                
 
       </Stack.Navigator>
     </NavigationContainer>   

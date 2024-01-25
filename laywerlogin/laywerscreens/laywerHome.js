@@ -8,16 +8,24 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-
+import LawyerCarousel from './lawyerCarousel';
+import { SafeAreaView } from 'react-native-safe-area-context'; 
 const { width, height } = Dimensions.get('window');
-
 export default function Home({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
         <View style={styles.topbar}>
-          <Text style={styles.headtext}>DashBoard</Text>
+          {/* <Text style={styles.headtext}>DashBoard</Text> */}
+          <View>
+          <SafeAreaView>
+            <LawyerCarousel/>
+          </SafeAreaView>
+          </View>
           <View style={styles.bot} />
+        </View>
+        <View>
+          <Text style={styles.headtext}>DashBoard</Text>
         </View>
         <View style={styles.works1}>
           {/* <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
@@ -32,13 +40,18 @@ export default function Home({ navigation }) {
             </View>
           </TouchableOpacity> */}
         </View>
-        <View>
-          <Text style={styles.headtext}>Quick Access</Text>
+        
+        <View style={styles.quick}>
+          <Text style={styles.headtext}>Quick Links</Text>
+          <View style={styles.bot}>
+            <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
+              <Image style={styles.image} source={require('../assets/bot.gif')} />
+            </TouchableOpacity>
+          </View>
         </View>
         <View style={styles.quickLinksContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('LawyerStackScreen')}
-          >
+            onPress={() => navigation.navigate('LawyerlawyerStackScreen')}>
             <View style={styles.iconContainer}>
               <Image
                 style={styles.buttonImageSmall}
@@ -47,27 +60,10 @@ export default function Home({ navigation }) {
               <Text style={styles.textcont}>Lawyers</Text>
             </View>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={() => navigation.navigate('RightStackScreen')}
-          >
-            <View style={styles.iconContainer}>
-              <Image
-                style={styles.buttonImageSmall}
-                source={require('../assets/rights.gif')}
-              />
-              <Text style={styles.textcont}>Rights</Text>
-            </View>
-          </TouchableOpacity>
-
-      
+         
         </View>
       </View>
-      <View style={styles.bot}>
-        <TouchableOpacity onPress={() => navigation.navigate('LawBot')}>
-          <Image style={styles.image} source={require('../assets/bot.gif')} />
-        </TouchableOpacity>
-      </View>
+   
     </ScrollView>
   );
 }
@@ -152,16 +148,17 @@ const styles = StyleSheet.create({
   },
   textcont: {
     textAlign: 'center',
-    padding: 2,
     fontWeight: 'bold',
   },
   bot: {
-    position: 'absolute',
-    bottom: 40,
-    right: 20,
+    marginLeft: '40%',
   },
   image: {
     height: 60,
     width: 60,
   },
+  quick: {
+    flexDirection: 'row',
+
+  }
 });
