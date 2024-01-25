@@ -12,7 +12,6 @@ import LawBot from './lawbot';
 import RightStackScreen from '../routes/rightStackScreen';
 import LawyerStackScreen from '../routes/laywerStackScreen';
 import { AntDesign } from '@expo/vector-icons';
-import Settings1 from './Settings/Settings1';
 
 function SettingsScreen({ navigation }) {
   return (
@@ -54,17 +53,14 @@ export default function DrawerScreen({navigation}) {
                         source={require('../assets/title.gif')}
                       />
                       <Text style={styles.htext}>Kaidee</Text>
-                      <Text style={{color:'red', marginLeft:'30%',marginTop:'20'}}
+                      {/* <Text style={{color:'red', marginLeft:'30%',marginTop:'20'}}
                       onPress={() => navigation.navigate('LoginScreen')}
                       >
                         
-                       Logout</Text>
+                       Logout</Text> */}
 
-                       <AntDesign name="user" size={24} color="white" style={styles.icons1} onPress
-                    ={
-                        () => navigation.navigate('Settings1')
-                    } />
-                  
+                       <AntDesign name="user" size={24} color="white" style={styles.icons1} 
+                       onPress={() => navigation.navigate('Settings1')} />
                       </View>
                    
                     );
@@ -107,7 +103,8 @@ const styles=StyleSheet.create({
     },
     icons1: {
       //color: 'white',
-      fontSize: 30,
+      fontSize: 40,
+      marginLeft:'50%'
   },
 
 

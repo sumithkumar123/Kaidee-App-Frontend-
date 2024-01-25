@@ -79,7 +79,7 @@ export default function FirstScreen({ navigation }) {
       <View style={styles.main}>
         <TouchableOpacity
           style={styles.bg}
-          onPress={() => navigation.navigate('LoginStackScreen')}>
+          onPress={() => navigation.navigate('LawyerLoginStackScreen')}>
           <Image style={styles.buttonImage} source={require('../assets/advocate.png')} />
         </TouchableOpacity>
         <Text style={{ fontSize: 28, color: 'white', textAlign: 'center', marginBottom: 10 }}>Lawyers</Text>

@@ -108,13 +108,13 @@ import { Foundation } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image={uri:"https://frappecloud.com/files/user.png"};
 
-export default function ProfileScreen({navigation}) {
+export default function LawyerProfileScreen({navigation}) {
   const [userdata, setUserdata] = React.useState(null)
 
     const loaddata = async () => {
         AsyncStorage.getItem('user')
             .then(async (value) => {
-                fetch('http://10.0.2.2:3000/userdata', {
+                fetch('http://10.0.2.2:3000/lawuserdata', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ export default function ProfileScreen({navigation}) {
                     body: JSON.stringify({ email: JSON.parse(value).user.email })
                 })
                     .then(res => res.json()).then(data => {
-                        if (data.message == 'User Found') {
+                        if (data.message == 'LawyerUsers Found') {
                             setUserdata(data.user)
                         }
                         else {
