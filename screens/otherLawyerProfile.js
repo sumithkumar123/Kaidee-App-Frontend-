@@ -4,6 +4,11 @@ import { Foundation } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { MailComposer } from 'expo';
 import * as MailComposer from 'expo-mail-composer';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Fontisto } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { icons1 } from './CommonCss/pagecss';
+import { Ionicons } from '@expo/vector-icons';
 const image={uri:"https://frappecloud.com/files/user.png"};
 
 const OtherLawyerProfile = ({ navigation, route }) => {
@@ -281,6 +286,32 @@ const OtherLawyerProfile = ({ navigation, route }) => {
                     <ActivityIndicator size="large" color="white" />
             }
 
+
+
+            <View style={styles.container1}>
+           
+            <MaterialCommunityIcons name="home-variant" size={24} color="black" style={icons1}
+
+onPress={() => navigation.navigate('HomeStackScreen')} />
+
+
+            
+            <Fontisto name="search" size={24} color="black" style={icons1}
+
+onPress={() => navigation.navigate('ProfileScreen')}
+/>
+           
+            <Ionicons name="notifications" size={24} color="black" style={icons1}
+
+onPress={ ()=>{ navigation.navigate('MessagePage',{ fuseremail : userdata.email,fuserid : userdata._id,})} } />          
+            <FontAwesome name="user" size={24} color="black" style={icons1}
+
+                        onPress={() => navigation.navigate('Searchlawyer')}
+
+                    />
+        </View>
+    
+
         </View>
     )
 }
@@ -389,5 +420,23 @@ const styles = StyleSheet.create({
     },
     row: {
         flexDirection: 'row',
+    },
+    container1: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        zIndex: 100,
+        paddingVertical: 10,
+        alignItems: 'center',
+        backgroundColor: 'cream'
+    },
+    activeicons1: {
+        backgroundColor: 'white',
+        borderRadius: 50,
+        fontSize: 30,
+        padding: 10,
     }
 })

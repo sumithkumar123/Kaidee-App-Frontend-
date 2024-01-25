@@ -67,7 +67,7 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-       <Tab.Screen name="Rehabilation" component={ProfileScreen} 
+       <Tab.Screen name="ProfileScreen" component={ProfileScreen} 
       options={{
         tabBarLabel: 'Profile',
         tabBarIcon: ({ color }) => (

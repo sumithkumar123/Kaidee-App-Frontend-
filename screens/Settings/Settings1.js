@@ -1,7 +1,9 @@
-import {  StyleSheet, Text, View } from 'react-native'
+import {  StyleSheet, Text, View,TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { formHead} from '../CommonCss/formcss'
+import { MaterialIcons } from '@expo/vector-icons';
+import { goback } from '../CommonCss/pagecss';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const Settings1 = ({ navigation }) => {
     const logout = () => {
@@ -12,9 +14,19 @@ const Settings1 = ({ navigation }) => {
     }
     return (
         <View style={styles.container}>
-            <Ionicons name="chevron-back-circle" size={24} color="white" style={styles.gohomeicon}
-                onPress={() => navigation.navigate('My_UserProfile')}
-            />
+            {/* <Ionicons name="chevron-back-circle" size={24} color="black" style={styles.gohomeicon}
+                onPress={() => navigation.navigate('DrawerScreen')}
+            /> */}
+            <TouchableOpacity onPress={() => navigation.navigate('DrawerScreen')} style={goback}>
+
+                <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
+                <Text style={{
+                    color: 'gray',
+                    fontSize: 16,
+                }}
+                >Go Back</Text>
+            </TouchableOpacity>
+                           
             <Text style={formHead}>Settings</Text>
             <Text style={styles.txt1}
                 onPress={() => navigation.navigate('EditProfile')}
@@ -34,13 +46,14 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black'
+        backgroundColor: 'white'
     },
     txt1: {
         marginTop: 20,
-        color: 'white',
+        color: 'black',
         fontSize: 20,
         borderBottomColor: 'gray',
+        paddingLeft:'2%',
         borderBottomWidth: 1,
     }
 })

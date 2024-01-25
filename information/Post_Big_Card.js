@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     notliked: {
-        color: 'grey',
+        color: 'black',
         marginLeft: 5,
         fontSize: 25,
     },
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     commentuser: {
-        color: 'white',
+        color: 'black',
         fontWeight: 'bold',
         fontSize: 17,
 

@@ -2,9 +2,10 @@ module.exports = {
     containerFull: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop:10,
     },
     logo1: {
         height: 100,
@@ -30,7 +31,9 @@ module.exports = {
         position: 'absolute',
         top: 50,
         left: 20,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom:10,
+        paddingBottom:10,
     },
     icons1: {
         //color: 'white',
@@ -45,7 +48,7 @@ module.exports = {
     },
     searchbar: {
         width: '90%',
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         borderRadius: 30,
         paddingVertical: 10,
         paddingHorizontal: 20,
