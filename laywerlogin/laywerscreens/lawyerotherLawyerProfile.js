@@ -278,7 +278,7 @@ const LawyerOtherLawyerProfile = ({ navigation, route }) => {
                     </ScrollView>
 
                     :
-                    <ActivityIndicator size="large" color="white" />
+                    <ActivityIndicator size="large" color="black" />
             }
 
         </View>

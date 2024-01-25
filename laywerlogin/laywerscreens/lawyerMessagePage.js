@@ -85,15 +85,15 @@ const LawyerMessagePage = ({ navigation, route }) => {
                         }
                         else {
                             alert('Login Again')
-                            navigation.navigate('LoginScreen')
+                            navigation.navigate('lawyerLoginScreen')
                         }
                     })
                     .catch(err => {
-                        navigation.navigate('LoginScreen')
+                        navigation.navigate('lawyerLoginScreen')
                     })
             })
             .catch(err => {
-                navigation.navigate('LoginScreen')
+                navigation.navigate('lawyerLoginScreen')
             })
     }
     const sendMessage = async () => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import lawyerLoginScreen from '../laywerscreens/laywerloginScreen';
-import lawyerSignupScreen from '../laywerscreens/laywersignUpScreen';
 import lawyerDrawerScreen from '../laywerscreens/laywerdrawer';
 import LawyerMessagePage from '../laywerscreens/lawyerMessagePage';
 import LawyerOtherLawyerProfile from '../laywerscreens/lawyerotherLawyerProfile';

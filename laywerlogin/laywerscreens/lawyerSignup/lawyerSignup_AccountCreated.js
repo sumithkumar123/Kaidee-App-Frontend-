@@ -9,7 +9,7 @@ const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://m
 const LawyerSignup_AccountCreated = ({ navigation }) => {
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('lawyerLoginScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{
@@ -30,7 +30,7 @@ const LawyerSignup_AccountCreated = ({ navigation }) => {
             </View>
 
             <Text style={formbtn}
-                onPress={() => navigation.navigate('LoginScreen')}
+                onPress={() => navigation.navigate('lawyerLoginScreen')}
             >
                 Let's Roll
             </Text>

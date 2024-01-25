@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
-import { containerFull, goback, hr80, logo1, row } from '../../../screens/CommonCss/pagecss';
-import { formbtn, formHead3, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
+import { containerFull, goback,logo1} from '../../../screens/CommonCss/pagecss';
+import { formbtn, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
 import { MaterialIcons } from '@expo/vector-icons';
 const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 const LawyerSignup_EnterEmail = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [loading, setLoading] = useState(false)
     const handleEmail = () => {
-        // setLoading(true)
-        // navigation.navigate('Signup_EnterVerificationCode')
+        
         if (email === '') {
             alert('Please enter email')
         }
@@ -27,7 +26,6 @@ const LawyerSignup_EnterEmail = ({ navigation }) => {
                 .then(res => res.json()).then(
                     data => {
                         if (data.error === "Invalid Credentials") {
-                            // alert('Invalid Credentials')
                             alert('Invalid Credentials')
                             setLoading(false)
                         }
@@ -46,7 +44,7 @@ const LawyerSignup_EnterEmail = ({ navigation }) => {
     }
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('lawyerLoginScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{
@@ -68,7 +66,7 @@ const LawyerSignup_EnterEmail = ({ navigation }) => {
             />
             {
                 loading ?
-                    <ActivityIndicator size="large" color="white" />
+                    <ActivityIndicator size="large" color="black" />
                     :
                     <Text style={formbtn}
                         onPress={() => handleEmail()}

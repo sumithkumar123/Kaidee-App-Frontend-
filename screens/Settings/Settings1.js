@@ -25,7 +25,7 @@ const Settings1 = ({ navigation }) => {
                     fontSize: 16,
                 }}
                 >Go Back</Text>
-            </TouchableOpacity>
+            </TouchableOpacity>r
                            
             <Text style={formHead}>Settings</Text>
             <Text style={styles.txt1}

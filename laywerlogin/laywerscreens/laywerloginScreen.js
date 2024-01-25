@@ -480,7 +480,7 @@ const lawyerLoginScreen = ({ navigation }) => {
 
             {
                 loading ?
-                    <ActivityIndicator size="large" color="white" />
+                    <ActivityIndicator size="large" color="black" />
                     :
                     <Text style={formbtn} onPress={
                         () => handleLogin()
@@ -494,7 +494,7 @@ const lawyerLoginScreen = ({ navigation }) => {
 
 
             <Text style={formTextLinkCenter}>
-                Don't have an account? <Text style={{ color: 'white' }}
+                Don't have an account? <Text style={{ color: 'black' }}
                     onPress={() => navigation.navigate('LawyerSignup_EnterEmail')}
                 >Signup</Text>
             </Text>

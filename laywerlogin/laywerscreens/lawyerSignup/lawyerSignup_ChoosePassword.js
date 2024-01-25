@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
+import {  Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import { containerFull, goback, hr80, logo1, row } from '../../../screens/CommonCss/pagecss';
+import { containerFull, goback, logo1} from '../../../screens/CommonCss/pagecss';
 
-import { formbtn, formHead3, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
+import { formbtn, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
 import { MaterialIcons } from '@expo/vector-icons';
 const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 const LawyerSignup_ChoosePassword = ({ navigation, route }) => {
@@ -14,7 +14,6 @@ const LawyerSignup_ChoosePassword = ({ navigation, route }) => {
 
     const handlePassword = () => {
 
-        // navigation.navigate('Signup_AccountCreated')
         if (password == '' || confirmpassword == '') {
             alert('Please enter password')
         } else if (password != confirmpassword) {
@@ -34,7 +33,7 @@ const LawyerSignup_ChoosePassword = ({ navigation, route }) => {
                         if (data.message === "LawyerUsers Registered Successfully") {
                             setLoading(false)
                             alert(data.message);
-                            navigation.navigate('LoginScreen')
+                            navigation.navigate('lawyerLoginScreen')
                         }
                         else {
                             setLoading(false)
@@ -46,7 +45,7 @@ const LawyerSignup_ChoosePassword = ({ navigation, route }) => {
     }
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('lawyerLoginScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{
