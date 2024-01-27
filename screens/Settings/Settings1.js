@@ -9,7 +9,7 @@ const Settings1 = ({ navigation }) => {
     const logout = () => {
         AsyncStorage.removeItem('user').then(() => {
             alert('Logged out successfully')
-            navigation.navigate('LoginScreen')
+            navigation.navigate('lawyerLoginScreen')
         })
     }
     return (
@@ -17,7 +17,7 @@ const Settings1 = ({ navigation }) => {
             {/* <Ionicons name="chevron-back-circle" size={24} color="black" style={styles.gohomeicon}
                 onPress={() => navigation.navigate('DrawerScreen')}
             /> */}
-            <TouchableOpacity onPress={() => navigation.navigate('DrawerScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('lawyerDrawerScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{

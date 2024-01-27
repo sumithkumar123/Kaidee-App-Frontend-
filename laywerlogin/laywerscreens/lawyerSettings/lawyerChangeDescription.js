@@ -4,7 +4,7 @@ import { containerFull, goback, hr80, logo1, row } from '../../../screens/Common
 import { formbtn, formHead3, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-const image="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg";
+const image1={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 const LawyerChangeDescription = ({ navigation }) => {
 
     const [description, setdescription] = useState('')
@@ -41,7 +41,7 @@ const LawyerChangeDescription = ({ navigation }) => {
                             else if (data.error === "Invalid Credentials") {
                                 alert('Invalid Credentials')
                                 setLoading(false)
-                                navigation.navigate('LoginScreen')
+                                navigation.navigate('lawyerLoginScreen')
                             }
                             else {
                                 setLoading(false)

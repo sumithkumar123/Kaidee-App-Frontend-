@@ -56,7 +56,6 @@ const LawyerSearchlawyer = ({ navigation }) => {
                     setKeyword(text)
                 }}
             />
-
             {
                 loading ?
                     <ActivityIndicator size="large" color="white" />
@@ -67,6 +66,18 @@ const LawyerSearchlawyer = ({ navigation }) => {
                                 <Text style={styles.formHead2}>{error}</Text>
                                 :
 
+                                <>
+                                {
+                                    keyword?<ScrollView style={styles.userlists}>
+                                    {
+                                        data.map((item, index) => {
+                                            return <LawyerUserCard key={item.username} user={item}
+                                                navigation={navigation}
+                                            />
+                                        })
+                                    
+                                    }
+                                </ScrollView>:
                                 <ScrollView style={styles.userlists}>
                                     {
                                         data.map((item, index) => {
@@ -76,9 +87,14 @@ const LawyerSearchlawyer = ({ navigation }) => {
                                         })
                                     }
                                 </ScrollView>
+
+                                }
+                                </>
                         }
                     </>
             }
+
+
         </View>
     )
 }

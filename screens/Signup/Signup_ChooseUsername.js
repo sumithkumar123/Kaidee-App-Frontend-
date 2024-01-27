@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { containerFull, goback,logo1 } from '../CommonCss/pagecss'
 import { formbtn, formHead2,  formInput, formTextLinkCenter, formTextLinkRight } from '../CommonCss/formcss'
 import { MaterialIcons } from '@expo/vector-icons';
-const image="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg";
+const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 const Signup_ChooseUsername = ({ navigation, route }) => {
     const { email } = route.params
     const [username, setusername] = useState('')

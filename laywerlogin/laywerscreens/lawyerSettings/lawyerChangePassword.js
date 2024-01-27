@@ -4,7 +4,7 @@ import { containerFull, goback, hr80, logo1, row } from '../../../screens/Common
 import { formbtn, formHead3, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-const image="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg";
+const image1={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 
 const LawyerChangePassword = ({ navigation }) => {
     const [oldpassword, setOldpassword] = useState('')
@@ -34,7 +34,7 @@ const LawyerChangePassword = ({ navigation }) => {
                                 setLoading(false)
                                 alert('Password Changed Successfully')
                                 AsyncStorage.removeItem('user')
-                                navigation.navigate('LoginScreen')
+                                navigation.navigate('lawyerLoginScreen')
                             }
                             else {
                                 alert('Wrong Password')

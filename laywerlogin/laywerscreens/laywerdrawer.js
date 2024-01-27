@@ -4,7 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import lawyerStackScreen from '../laywerroutes/laywerlaywerStackScreen';
 import lawyerMainScreen from './laywermainScreen';
-
+import { AntDesign } from '@expo/vector-icons';
+import { icons1 } from '../../screens/CommonCss/pagecss';
 function SettingsScreen({ navigation }) {
   return (
     <View>
