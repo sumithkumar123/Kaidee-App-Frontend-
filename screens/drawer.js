@@ -59,7 +59,7 @@ export default function DrawerScreen({navigation}) {
                         
                        Logout</Text> */}
 
-                       <AntDesign name="user" size={24} color="white" style={styles.icons1} 
+                       <AntDesign name="user" size={24} color="white" style={fontSize=30} 
                        onPress={() => navigation.navigate('Settings1')} />
                       </View>
                    

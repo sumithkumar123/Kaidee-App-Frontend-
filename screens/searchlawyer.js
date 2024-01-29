@@ -1,6 +1,8 @@
+
+
 import { StyleSheet, Text, View, StatusBar, TextInput, ScrollView, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import UserCard from './UserCard'
+import LawyerUserCard from '../laywerlogin/laywerscreens/lawyerUserCard'
 
 const Searchlawyer = ({ navigation }) => {
 
@@ -13,7 +15,7 @@ const Searchlawyer = ({ navigation }) => {
     const getallusers = async () => {
         if (keyword.length > 0) {
             setLoading(true)
-            fetch('http://10.0.2.2:3000/searchuser', {
+            fetch('http://10.0.2.2:3000/lawsearchuser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -28,7 +30,7 @@ const Searchlawyer = ({ navigation }) => {
                         setError(data.error)
                         setLoading(false)
                     }
-                    else if (data.message == 'User Found') {
+                    else if (data.message == 'LawyerUsers Found') {
                         setError(null)
                         setData(data.user)
                         setLoading(false)
@@ -70,7 +72,7 @@ const Searchlawyer = ({ navigation }) => {
                                 <ScrollView style={styles.userlists}>
                                     {
                                         data.map((item, index) => {
-                                            return <UserCard key={item.username} user={item}
+                                            return <LawyerUserCard key={item.username} user={item}
                                                 navigation={navigation}
                                             />
                                         })
@@ -83,7 +85,10 @@ const Searchlawyer = ({ navigation }) => {
     )
 }
 
+
 export default Searchlawyer
+
+
 
 const styles = StyleSheet.create({
     container: {

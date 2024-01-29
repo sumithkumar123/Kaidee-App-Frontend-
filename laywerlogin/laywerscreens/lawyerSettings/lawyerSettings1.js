@@ -7,7 +7,7 @@ const LawyerSettings1 = ({ navigation }) => {
     const logout = () => {
         AsyncStorage.removeItem('user').then(() => {
             alert('Logged out successfully')
-            navigation.navigate('LoginScreen')
+            navigation.navigate('LawyerLoginScreen')
         })
     }
     return (

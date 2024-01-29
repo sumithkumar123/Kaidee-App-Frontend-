@@ -5,12 +5,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import lawyerOne from '../../information/laywerOne';
 import lawyerDashboard from '../laywerinformation/laywerdashboardinfo';
-import lawyerBail from '../laywerinformation/laywerbailinfo';
+// import lawyerBail from '../laywerinformation/laywerbailinfo';
 import LawyerlawyerStackScreen from './laywerlaywerStackScreen';
 import lawyerHome from '../laywerscreens/laywerHome';
 const HomeStack = createNativeStackNavigator();
 
-export default function lawyerHomeStackScreen() {
+export default function LawyerHomeStackScreen() {
   return (
    
     <HomeStack.Navigator>
@@ -21,9 +21,9 @@ export default function lawyerHomeStackScreen() {
         <HomeStack.Screen name="LawyerStackScreen" component={LawyerlawyerStackScreen} />
         <HomeStack.Screen name="Dashboard" component={lawyerDashboard}  />
         <HomeStack.Screen name="lawyerOne" component={lawyerOne}  />
-        <HomeStack.Screen name="Bail" component={lawyerBail} 
+        {/* <HomeStack.Screen name="Bail" component={lawyerBail} 
       
-       />
+       /> */}
         
     </HomeStack.Navigator>
   );

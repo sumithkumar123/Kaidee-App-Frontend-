@@ -3,7 +3,9 @@ import { View, Text, Button , Image, TouchableHighlight, StyleSheet} from 'react
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import lawyerStackScreen from '../laywerroutes/laywerlaywerStackScreen';
-import lawyerMainScreen from './laywermainScreen';
+import LawyerMainScreen from './laywermainScreen';
+import { AntDesign } from '@expo/vector-icons';
+
 
 function SettingsScreen({ navigation }) {
   return (
@@ -32,11 +34,11 @@ function legalaidScreen({ navigation }) {
 
 const Drawer = createDrawerNavigator();
 
-export default function lawyerDrawerScreen({navigation}) {
+export default function LawyerDrawerScreen({navigation}) {
   return (
       <Drawer.Navigator initialRouteName="lawyerMainScreen">
         {/* Add your drawer screens here */}
-        <Drawer.Screen name="Home" component={lawyerMainScreen} 
+        <Drawer.Screen name="LawyerMainScreen" component={LawyerMainScreen} 
                   options={{ headerTitle:  function LogoTitle() {
                     return (
                       <View style={styles.headalign}>
@@ -50,7 +52,7 @@ export default function lawyerDrawerScreen({navigation}) {
                       >
                         
                        Logout</Text> */}
-                       <AntDesign name="user" size={24} color="white" style={icons1} onPress
+                       <AntDesign name="user" size={24} color="white" style={fontSize=30} onPress
                     ={
                         () => navigation.navigate('LawyerSettings1')
                     } />

@@ -39,6 +39,9 @@ import LawyerEditProfile from './laywerlogin/laywerscreens/lawyerSettings/lawyer
 import LawyerUploadProfilePicture from './laywerlogin/laywerscreens/lawyerSettings/lawyerUploadProfilePicture';
 import LawyerSettings1 from './laywerlogin/laywerscreens/lawyerSettings/lawyerSettings1';
 
+import LawyerLoginScreen from './laywerlogin/laywerscreens/laywerloginScreen';
+import LoginScreen from './screens/loginScreen';
+
 const Stack = createNativeStackNavigator(); 
  //hell
 export default function App() {
@@ -51,7 +54,9 @@ export default function App() {
                 <Stack.Screen name="FirstStackScreen" component={FirstStackScreen} />
                 <Stack.Screen name="FirstScreen" component={FirstScreen} />
                 <Stack.Screen name="LoginStackScreen" component={LoginStackScreen} />
-                <Stack.Screen name="LaywerLoginStackScreen" component={LawyerLoginStackScreen} />
+                <Stack.Screen name="LoginScreen" component={LoginScreen} />
+                <Stack.Screen name="LawyerLoginStackScreen" component={LawyerLoginStackScreen} />
+                <Stack.Screen name="LawyerLoginScreen" component={LawyerLoginScreen} />
                 <Stack.Screen name="Signup_EnterEmail" component={Signup_EnterEmail} />
                  <Stack.Screen name="Signup_EnterVerificationCode" component={Signup_EnterVerificationCode} />
                  <Stack.Screen name="Signup_ChooseUsername" component={Signup_ChooseUsername} />

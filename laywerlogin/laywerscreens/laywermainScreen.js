@@ -3,14 +3,17 @@ import { Text, View ,Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import lawyerHomeStackScreen from '../laywerroutes/laywerhomeStackScreen';
+import LawyerHomeStackScreen from '../laywerroutes/laywerhomeStackScreen';
 import LawyerProfileScreen from './laywerprofileScreen';
 import LawyerSearchlawyer from './lawyerSearchLawyer';
 import LawyerMessagePage from './lawyerMessagePage';
 import { MaterialIcons } from '@expo/vector-icons';
+
+import LawyerSearchStack from '../laywerroutes/lawyerSearchStack';
+import MessagePage from '../../screens/MessagePage';
 const Tab = createMaterialBottomTabNavigator();
 
-export default function lawyerMainScreen({navigation}) {
+export default function LawyerMainScreen({navigation}) {
   return (
     <Tab.Navigator
       initialRouteName="HomeStackScreen"
@@ -18,7 +21,7 @@ export default function lawyerMainScreen({navigation}) {
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: 'tomato' }}
     >
-       <Tab.Screen name="HomeS" component={lawyerHomeStackScreen} 
+       <Tab.Screen name="LawyerHomeStackScreen" component={LawyerHomeStackScreen} 
       options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({ color }) => (
@@ -47,7 +50,7 @@ export default function lawyerMainScreen({navigation}) {
   )
         
       }}  />
-       <Tab.Screen name="LawyerMessagePage" component={LawyerMessagePage} 
+       {/* <Tab.Screen name="MessagePage" component={MessagePage} 
       
       options={{
         tabBarLabel: 'LawyerMessagePage',
@@ -62,23 +65,8 @@ export default function lawyerMainScreen({navigation}) {
           fontWeight: 'bold',
         },
         headerTintColor: '#fff',
-      }} />
-       <Tab.Screen name="LawyerProfileScreen" component={LawyerProfileScreen} 
-      options={{
-        tabBarLabel: 'Profile',
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="account" color={color} size={26} />
-        ),
-        title: 'ProfileScreen',
-        headerStyle: {
-          backgroundColor: 'black',
-        },
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTintColor: '#fff',
-      }} />
-      <Tab.Screen name="LawyerSearchlawyer" component={LawyerSearchlawyer} 
+      }} /> */}
+      <Tab.Screen name="LawyerSearchStack" component={LawyerSearchStack} 
       options={{
         tabBarLabel: 'searchprisoner',
         tabBarIcon: ({ color }) => (
@@ -96,6 +84,22 @@ export default function lawyerMainScreen({navigation}) {
       }} />
 
 
+       <Tab.Screen name="LawyerProfileScreen" component={LawyerProfileScreen} 
+      options={{
+        tabBarLabel: 'Profile',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="account" color={color} size={26} />
+        ),
+        title: 'ProfileScreen',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTintColor: '#fff',
+      }} />
+      
 
     </Tab.Navigator>  
     );

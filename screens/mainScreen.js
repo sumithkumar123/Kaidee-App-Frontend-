@@ -11,6 +11,8 @@ import Dashboard from '../information/dashboardinfo';
 import Searchlawyer from './searchlawyer';
 import MessagePage from './MessagePage';
 import { MaterialIcons } from '@expo/vector-icons';
+import SearchUserStack from '../routes/searchUserStack';
+import LawyerMessagePage from '../laywerlogin/laywerscreens/lawyerMessagePage';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -51,7 +53,7 @@ export default function MainScreen({navigation}) {
   )
         
       }}  />
-       <Tab.Screen name="MessagePage" component={MessagePage} 
+       {/* <Tab.Screen name="LawyerMessagePage" component={LawyerMessagePage} 
       
       options={{
         tabBarLabel: 'MessagePage',
@@ -67,23 +69,9 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-       <Tab.Screen name="Rehabilation" component={ProfileScreen} 
-      options={{
-        tabBarLabel: 'Profile',
-        tabBarIcon: ({ color }) => (
-          <MaterialCommunityIcons name="account" color={color} size={26} />
-        ),
-        title: 'ProfileScreen',
-        headerStyle: {
-          backgroundColor: 'black',
-        },
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTintColor: '#fff',
-      }} />
+ */}
 
-      <Tab.Screen name="Searchlawyer" component={Searchlawyer} 
+      <Tab.Screen name="SearchUserStack" component={SearchUserStack} 
       options={{
         tabBarLabel: 'Searchlawyer',
         tabBarIcon: ({ color }) => (
@@ -101,7 +89,21 @@ export default function MainScreen({navigation}) {
         headerTintColor: '#fff',
       }} />
     
-
+    <Tab.Screen name="ProfileScreen" component={ProfileScreen} 
+      options={{
+        tabBarLabel: 'Profile',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="account" color={color} size={26} />
+        ),
+        title: 'ProfileScreen',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTintColor: '#fff',
+      }} />
 
 
 

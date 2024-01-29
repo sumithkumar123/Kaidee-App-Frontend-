@@ -45,7 +45,7 @@ const LawyerForgotPassword_EnterEmail = ({ navigation }) => {
     }
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('LawyerLoginScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{

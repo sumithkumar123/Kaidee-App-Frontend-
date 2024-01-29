@@ -31,7 +31,7 @@ const Post_Big_Card = (
 
 
                 <View style={styles.s22}>
-                    <FontAwesome name="comment" size={24} color="black" style={styles.icons1} onPress={
+                    <FontAwesome name="comment" size={24} color="black" style={fontSize=30} onPress={
                         () => {
                             setShowcomments(!showcomments)
                         }

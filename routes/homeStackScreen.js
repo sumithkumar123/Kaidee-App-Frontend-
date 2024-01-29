@@ -12,6 +12,7 @@ import RightStackScreen from './rightStackScreen';
 import RehabilationHome from '../screens/rehabilationHome';
 import lawyerOne from '../information/laywerOne';
 
+
 // import MentalHealthHome from '../mentalHealth/mentalHealthHome';
 import rightScreen from '../screens/rightScreen';
 const HomeStack = createNativeStackNavigator();

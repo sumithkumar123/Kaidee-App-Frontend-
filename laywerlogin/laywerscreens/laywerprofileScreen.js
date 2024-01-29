@@ -128,15 +128,15 @@ export default function LawyerProfileScreen({navigation}) {
                         }
                         else {
                             alert('Login Again')
-                            navigation.navigate('LoginScreen')
+                            navigation.navigate('LawyerLoginScreen')
                         }
                     })
                     .catch(err => {
-                        navigation.navigate('LoginScreen')
+                        navigation.navigate('LawyerLoginScreen')
                     })
             })
             .catch(err => {
-                navigation.navigate('LoginScreen')
+                navigation.navigate('LawyerLoginScreen')
             })
     }
     useEffect(() => {

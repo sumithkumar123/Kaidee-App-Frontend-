@@ -34,7 +34,7 @@ const LawyerChangePassword = ({ navigation }) => {
                                 setLoading(false)
                                 alert('Password Changed Successfully')
                                 AsyncStorage.removeItem('user')
-                                navigation.navigate('LoginScreen')
+                                navigation.navigate('LawyerLoginScreen')
                             }
                             else {
                                 alert('Wrong Password')

@@ -34,7 +34,7 @@ const LawyerSignup_ChoosePassword = ({ navigation, route }) => {
                         if (data.message === "LawyerUsers Registered Successfully") {
                             setLoading(false)
                             alert(data.message);
-                            navigation.navigate('LoginScreen')
+                            navigation.navigate('LawyerLoginScreen')
                         }
                         else {
                             setLoading(false)
@@ -46,7 +46,7 @@ const LawyerSignup_ChoosePassword = ({ navigation, route }) => {
     }
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('LawyerLoginScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{

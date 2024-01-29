@@ -69,7 +69,7 @@ const LawyerUploadProfilePicture = ({ navigation }) => {
                                 else if (data.error === "Invalid Credentials") {
                                     alert('Invalid Credentials')
                                     setLoading(false)
-                                    navigation.navigate('LoginScreen')
+                                    navigation.navigate('LawyerLoginScreen')
                                 }
                                 else {
                                     setLoading(false)

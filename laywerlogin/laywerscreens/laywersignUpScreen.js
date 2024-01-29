@@ -45,7 +45,7 @@
 //                         else {
 //                             // console.log(data.udata);
 //                             alert('account created successfully');
-//                             navigation.navigate('LoginScreen');
+//                             navigation.navigate('LawyerLoginScreen');
 //                         }
 //                     }
 //                 )
@@ -98,7 +98,7 @@
 
 //                         >Signup</Text>
 //                     </TouchableOpacity>
-//       <Text  onPress={() => navigation.navigate('LoginScreen')}>Back to Login in Screen</Text> 
+//       <Text  onPress={() => navigation.navigate('LawyerLoginScreen')}>Back to Login in Screen</Text> 
 //       </View>
 //     </View>
 //   );
@@ -186,7 +186,7 @@
 //                         else {
 //                             // console.log(data.udata);
 //                             alert('account created successfully');
-//                             navigation.navigate('LoginScreen');
+//                             navigation.navigate('LawyerLoginScreen');
 //                         }
 //                     }
 //                 )

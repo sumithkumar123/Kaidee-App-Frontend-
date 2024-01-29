@@ -423,7 +423,7 @@ import { formbtn, formHead, formInput, formTextLinkCenter, formTextLinkRight } f
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 
-const lawyerLoginScreen = ({ navigation }) => {
+const LawyerLoginScreen = ({ navigation }) => {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [loading, setLoading] = React.useState(false)
@@ -453,7 +453,7 @@ const lawyerLoginScreen = ({ navigation }) => {
                     else if (data.message == 'Successfully Signed In') {
                         setLoading(false)
                         await AsyncStorage.setItem('user', JSON.stringify(data))
-                        navigation.navigate('lawyerDrawerScreen', { data })
+                        navigation.navigate('LawyerDrawerScreen', { data })
                     }
                 })
                 .catch(err => {
@@ -503,6 +503,6 @@ const lawyerLoginScreen = ({ navigation }) => {
     )
 }
 
-export default lawyerLoginScreen
+export default LawyerLoginScreen
 
 const styles = StyleSheet.create({})
