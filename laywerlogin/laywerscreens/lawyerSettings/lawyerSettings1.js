@@ -2,18 +2,19 @@ import {  StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { formHead} from '../../../screens/CommonCss/formcss';
+import { goback } from '../../../screens/CommonCss/pagecss';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const LawyerSettings1 = ({ navigation }) => {
     const logout = () => {
         AsyncStorage.removeItem('user').then(() => {
             alert('Logged out successfully')
-            navigation.navigate('LawyerLoginScreen')
+            navigation.navigate('LoginScreen')
         })
     }
     return (
         <View style={styles.container}>
-            <Ionicons name="chevron-back-circle" size={24} color="white" style={styles.gohomeicon}
-                onPress={() => navigation.navigate('My_UserProfile')}
+            <Ionicons name="chevron-back-circle" size={24} color="white" style={goback}
+                onPress={() => navigation.navigate('lawyerDrawerScreen')}
             />
             <Text style={formHead}>Settings</Text>
             <Text style={styles.txt1}
@@ -34,13 +35,14 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        backgroundColor: 'black'
+        backgroundColor: 'white'
     },
     txt1: {
         marginTop: 20,
-        color: 'white',
+        color: 'black',
         fontSize: 20,
         borderBottomColor: 'gray',
+        paddingLeft:'2%',
         borderBottomWidth: 1,
     }
 })

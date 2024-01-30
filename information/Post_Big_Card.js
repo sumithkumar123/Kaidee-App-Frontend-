@@ -48,7 +48,8 @@ const Post_Big_Card = (
                             return (
                                 <View style={styles.s31} key={item.id}>
                                     <Text style={styles.commentuser}>{item.username}</Text>
-                                    <Text style={styles.commenttext}>{item.comment}</Text>
+                                    <Text style={styles.text}>{item.comment}</Text>
+                                    <Text style={styles.text}>{item.description}</Text>
                                 </View>
                             )
                         })
@@ -109,7 +110,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     notliked: {
-        color: 'grey',
+        color: 'black',
         marginLeft: 5,
         fontSize: 25,
     },
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     commentuser: {
-        color: 'white',
+        color: 'black',
         fontWeight: 'bold',
         fontSize: 17,
 
@@ -150,5 +151,9 @@ const styles = StyleSheet.create({
         //color: 'white',
         fontSize: 30,
     },
+    text:{
+        color:'black',
+        fontSize:26,
+    }
 
 })

@@ -4,7 +4,8 @@ import { containerFull, goback, logo1 } from '../CommonCss/pagecss'
 import { formbtn, formHead2, formInput, formTextLinkRight } from '../CommonCss/formcss'
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-const image="https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg";
+const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
+
 
 const ChangePassword = ({ navigation }) => {
     const [oldpassword, setOldpassword] = useState('')

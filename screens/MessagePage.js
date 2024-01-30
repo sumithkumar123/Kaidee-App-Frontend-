@@ -325,7 +325,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import io from 'socket.io-client'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image={uri:"https://frappecloud.com/files/user.png"};
-const socket = io('http://192.168.200.246:3001')
+const socket = io('http://192.168.1.47:3001')
 const MessagePage = ({ navigation, route }) => {
     const { fuseremail, fuserid } = route.params;
     const [ouruserdata, setOuruserdata] = React.useState(null);
@@ -338,12 +338,15 @@ const MessagePage = ({ navigation, route }) => {
         loaddata()
     }, [])
 
+   
     useEffect(() => {
+        socket.connect();  // Add this line to establish the socket connection
         socket.on('receive_message', (data) => {
-            console.log('recieved message - ', data)
-            loadMessages(roomid)
-        })
-    }, [socket])
+            console.log('recieved message - ', data);
+            loadMessages(roomid);
+        });
+    }, [socket]);
+    
     const sortroomid = (id1, id2) => {
         if (id1 > id2) {
             return id1 + id2
@@ -354,20 +357,31 @@ const MessagePage = ({ navigation, route }) => {
     const loaddata = async () => {
         AsyncStorage.getItem('user')
             .then(async (value) => {
-                fetch('http://10.0.2.2:3000/userdata', {
+                console.log('Starting loaddata function');
+
+                fetch('http://10.0.2.2:3000/lawuserdata', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': 'Bearer' + JSON.parse(value).token
                     },
-                    body: JSON.stringify({ email: JSON.parse(value).user.email })
+                    body: JSON.stringify({ email: JSON.parse(value).user.email }) 
+                    
                 })
-                    .then(res => res.json()).then(data => {
-                        if (data.message == 'User Found') {
+          
+                 
+                    .then(res => res.json()).then(data => {  
+                        console.log('After fetching user data'); 
+                        console.log(data);
+                        if (data.message == 'LawyerUsers Found') { 
                             // console.log('our user data ', data.user.username)
+                            console.log('fetch user data1')
                             setOuruserdata(data.user)
-                            setUserid(data.user._id)
+                            console.log('error before line before')
+                            console.log('Data:', data);
 
+                            setUserid(data.user._id)
+                            console.log('error before line')
                             fetch('http://10.0.2.2:3000/otheruserdata', {
                                 method: 'POST',
                                 headers: {
@@ -377,8 +391,11 @@ const MessagePage = ({ navigation, route }) => {
                             })
                                 .then(res => res.json())
                                 .then(async data1 => {
+                                    console.log('After fetching other user data');
+
                                     if (data1.message == 'User Found') {
                                         // console.log('fuser data ', data1.user.username)
+                                        console.log('Data fetchedd')
                                         setFuserdata(data1.user)
                                         let temproomid = await sortroomid(fuserid, data.user._id)
 
@@ -386,30 +403,38 @@ const MessagePage = ({ navigation, route }) => {
                                         // console.log('room id ', temproomid)
                                         socket.emit('join_room', { roomid: temproomid })
                                         loadMessages(temproomid)
+                                        console.log('After joining room');
+
                                     }
                                     else {
                                         alert('User Not Found')
-                                        navigation.navigate('Searchlawyer')
+                                        console.log('not fetchedd')
+                                        // navigation.navigate('Searchlawyer')
                                         // navigation.navigate('Login')
                                     }
                                 })
                                 .catch(err => {
                                     // console.log(err)
+                                    console.log('not fetchedd 1')
                                     alert('Something Went Wrong')
                                     navigation.navigate('Searchlawyer')
                                 })
                         }
                         else {
                             alert('Login Again')
-                            navigation.navigate('LoginScreen')
+                            console.log('1st')
+                            navigation.navigate('LawyerLoginScreen')
                         }
                     })
                     .catch(err => {
-                        navigation.navigate('LoginScreen')
+                        console.log('2nd')
+                        alert('An error occurred. Please try again.');
+                        // navigation.navigate('LawyerLoginScreen')
                     })
             })
             .catch(err => {
-                navigation.navigate('LoginScreen')
+                console.log('3rd')
+                navigation.navigate('LawyerLoginScreen')
             })
     }
     const sendMessage = async () => {
@@ -451,7 +476,7 @@ const MessagePage = ({ navigation, route }) => {
         loadMessages(roomid)
     }, [chat])
 
-    const [currentmessage, setCurrentmessage] = React.useState(null);
+    const [currentmessage, setCurrentmessage] = React.useState('');
 
 
     const loadMessages = (temproomid) => {
@@ -464,13 +489,15 @@ const MessagePage = ({ navigation, route }) => {
         }).then(res => res.json())
             .then(data => {
                 setChat(data)
-            })
+            }).catch(error => {
+                console.error('Error fetching messages:', error);
+            });
     }
     const scrollViewRef = useRef();
     return (
         <View style={styles.container}>
             <View style={styles.s1}>
-                <TouchableOpacity onPress={() => navigation.navigate('Searchlawyer')} style={styles.goback}>
+                <TouchableOpacity onPress={() => navigation.navigate('LawyerSearchlawyer')} style={styles.goback}>
                     <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 </TouchableOpacity>
 

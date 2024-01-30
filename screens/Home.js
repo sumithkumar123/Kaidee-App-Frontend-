@@ -28,7 +28,7 @@ export default function Home({ navigation }) {
           <Text style={styles.headtext}>DashBoard</Text>
         </View>
         <View style={styles.works1}>
-          {/* <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
+          <TouchableOpacity onPress={() => navigation.navigate('DashBoard')}>
             <View style={styles.buttonContainer}>
               <View style={styles.buttonbox}>
                 <Image
@@ -38,7 +38,7 @@ export default function Home({ navigation }) {
               </View>
               <Text style={styles.textcont}>..</Text>
             </View>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
         
         <View style={styles.quick}>

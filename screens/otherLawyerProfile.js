@@ -429,6 +429,8 @@ const OtherLawyerProfile = ({ navigation, route }) => {
     const { user } = route.params
     // console.log(user)
     const loaddata = async () => {
+        console.log('Loading data...');
+
         fetch('http://10.0.2.2:3000/otheruserdata', {
             method: 'POST',
             headers: {
@@ -442,6 +444,8 @@ const OtherLawyerProfile = ({ navigation, route }) => {
                     setUserdata(data.user)
                     ismyprofile(data.user)
                     CheckFollow(data.user)
+                    console.log('Data loaded successfully:', data);
+
                 }
                 else {
                     alert('User Not Found')
@@ -451,8 +455,11 @@ const OtherLawyerProfile = ({ navigation, route }) => {
             })
             .catch(err => {
                 // console.log(err)
-                alert('Something Went Wrong')
-                navigation.navigate('Searchlawyer')
+                console.error('Fetch error:', error);
+                alert('Error fetching data');
+                navigation.navigate('Searchlawyer');
+                // alert('Something Went Wrong')
+                // navigation.navigate('Searchlawyer')
             })
     }
     useEffect(() => {
@@ -478,14 +485,15 @@ const OtherLawyerProfile = ({ navigation, route }) => {
         }).then(res => res.json())
             .then(data => {
                 if (data.message == 'User Followed') {
-                    // alert('Followed')
+                    console.log('Followed');
                     loaddata()
                     setIsfollowing(true)
                     //request from prisoner to lawyer
                     sendFollowRequestEmail(userdata.email, loggeduserobj.user.email);
                 }
                 else {
-                    alert('Something Went Wrong')
+                    // alert('Something Went Wrong')
+                    alert('error in following')
                 }
             })
     }
@@ -505,6 +513,8 @@ const OtherLawyerProfile = ({ navigation, route }) => {
 
     const [isfollowing, setIsfollowing] = React.useState(false)
     const CheckFollow = async (otheruser) => {
+        console.log('Loading checkfollow data...');
+
         AsyncStorage.getItem('user')
             .then(loggeduser => {
                 const loggeduserobj = JSON.parse(loggeduser);
@@ -522,6 +532,8 @@ const OtherLawyerProfile = ({ navigation, route }) => {
                     .then(data => {
                         if (data.message == 'User in following list') {
                             setIsfollowing(true)
+                            console.log('checkfollow Data loaded successfully:', data);
+
                         }
                         else if (
                             data.message == 'User not in following list'
@@ -531,7 +543,8 @@ const OtherLawyerProfile = ({ navigation, route }) => {
                         }
                         else {
                             // loaddata()
-                            alert('Something Went Wrong')
+                            // alert('Something Went Wrong')
+                            alert('error in checkfollow')
                         }
                     })
             })
@@ -561,7 +574,8 @@ const OtherLawyerProfile = ({ navigation, route }) => {
                     setIsfollowing(false)
                 }
                 else {
-                    alert('Something Went Wrong')
+                    // alert('Something Went Wrong')
+                    alert('error in unfollowthis user')
                 }
             })
     }

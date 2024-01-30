@@ -53,7 +53,7 @@ export default function MainScreen({navigation}) {
   )
         
       }}  />
-       {/* <Tab.Screen name="LawyerMessagePage" component={LawyerMessagePage} 
+        <Tab.Screen name="LawyerMessagePage" component={LawyerMessagePage} 
       
       options={{
         tabBarLabel: 'MessagePage',
@@ -69,9 +69,23 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
- */}
+       <Tab.Screen name="Rehabilation" component={ProfileScreen} 
+      options={{
+        tabBarLabel: 'Profile',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="account" color={color} size={26} />
+        ),
+        title: 'ProfileScreen',
+        headerStyle: {
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTintColor: '#fff',
+      }} />
 
-      <Tab.Screen name="SearchUserStack" component={SearchUserStack} 
+      <Tab.Screen name="Searchlawyer" component={Searchlawyer} 
       options={{
         tabBarLabel: 'Searchlawyer',
         tabBarIcon: ({ color }) => (

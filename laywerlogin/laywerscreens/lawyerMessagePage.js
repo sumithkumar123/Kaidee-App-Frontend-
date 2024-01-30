@@ -655,19 +655,25 @@ import {
 
 import React, { useEffect, useRef } from 'react'
 import { MaterialIcons } from '@expo/vector-icons';
-
 import io from 'socket.io-client'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const image={uri:"https://frappecloud.com/files/user.png"};
-const socket = io('http://192.168.123.198:3001')
-const LawyerMessagePage = ({ navigation, route }) => {
+const socket = io('http://192.168.1.47:3001')
+
+
+const MessagePage = ({ navigation, route }) => {
+
     const { fuseremail, fuserid } = route.params;
+
     const [ouruserdata, setOuruserdata] = React.useState(null);
     const [fuserdata, setFuserdata] = React.useState(null);
+
     const [userid, setUserid] = React.useState(null);
     const [roomid, setRoomid] = React.useState(null);
     const [chat, setChat] = React.useState(['']);
+
     // OUR ID & ROOM ID FOR SOCKET.IO
+
     useEffect(() => {
         loaddata()
     }, [])
@@ -678,6 +684,8 @@ const LawyerMessagePage = ({ navigation, route }) => {
             loadMessages(roomid)
         })
     }, [socket])
+
+
     const sortroomid = (id1, id2) => {
         if (id1 > id2) {
             return id1 + id2
@@ -685,10 +693,12 @@ const LawyerMessagePage = ({ navigation, route }) => {
             return id2 + id1
         }
     }
+
+
     const loaddata = async () => {
         AsyncStorage.getItem('user')
             .then(async (value) => {
-                fetch('http://10.0.2.2:3000/lawuserdata', {
+                fetch('http://10.0.2.2:3000/userdata', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -697,7 +707,7 @@ const LawyerMessagePage = ({ navigation, route }) => {
                     body: JSON.stringify({ email: JSON.parse(value).user.email })
                 })
                     .then(res => res.json()).then(data => {
-                        if (data.message == 'LawyerUsers Found') {
+                        if (data.message == 'User Found') {
                             // console.log('our user data ', data.user.username)
                             setOuruserdata(data.user)
                             setUserid(data.user._id)
@@ -722,30 +732,35 @@ const LawyerMessagePage = ({ navigation, route }) => {
                                         loadMessages(temproomid)
                                     }
                                     else {
-                                        alert('LawyerUsers Not Found')
-                                        navigation.navigate('LawyerSearchlawyer')
+                                        alert('User Not Found')
+                                        navigation.navigate('Searchlawyer')
                                         // navigation.navigate('Login')
                                     }
                                 })
                                 .catch(err => {
                                     // console.log(err)
                                     alert('Something Went Wrong')
-                                    navigation.navigate('LawyerSearchlawyer')
+                                    navigation.navigate('Searchlawyer')
                                 })
                         }
                         else {
                             alert('Login Again')
-                            navigation.navigate('LawyerLoginScreen')
+                            navigation.navigate('LoginScreen')
                         }
                     })
                     .catch(err => {
-                        navigation.navigate('LawyerLoginScreen')
+                        navigation.navigate('LoginScreen')
                     })
             })
             .catch(err => {
-                navigation.navigate('LawyerLoginScreen')
+                navigation.navigate('LoginScreen')
             })
     }
+
+    // const joinroom = () => {
+    //     socket.emit('join_room', { roomid: roomid })
+    // }
+
     const sendMessage = async () => {
         const messagedata = {
             message: currentmessage,
@@ -767,6 +782,7 @@ const LawyerMessagePage = ({ navigation, route }) => {
                     loadMessages(roomid)
                     console.log('message sent')
 
+                   
 
                     setCurrentmessage('')
 
@@ -804,7 +820,7 @@ const LawyerMessagePage = ({ navigation, route }) => {
     return (
         <View style={styles.container}>
             <View style={styles.s1}>
-                <TouchableOpacity onPress={() => navigation.navigate('LawyerSearchlawyer')} style={styles.goback}>
+                <TouchableOpacity onPress={() => navigation.navigate('Searchlawyer')} style={styles.goback}>
                     <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 </TouchableOpacity>
 
@@ -812,9 +828,7 @@ const LawyerMessagePage = ({ navigation, route }) => {
                     fuserdata?.profilepic ?
                         <Image source={{ uri: fuserdata?.profilepic }} style={styles.profilepic} />
                         :
-                        <Image source={image} style={{width: 40,
-        height: 40,
-        borderRadius: 25,}} />
+                        <Image source={image} style={styles.profilepic} />
 
                 }
                 <Text style={styles.username}>{fuserdata?.username}</Text>
@@ -871,7 +885,7 @@ const LawyerMessagePage = ({ navigation, route }) => {
     )
 }
 
-export default LawyerMessagePage
+export default MessagePage
 
 const styles = StyleSheet.create({
     container: {
@@ -958,6 +972,3 @@ const styles = StyleSheet.create({
         margin: 10,
     },
 })
-
-
-//other

@@ -41,6 +41,8 @@ import LawyerSettings1 from './laywerlogin/laywerscreens/lawyerSettings/lawyerSe
 
 import LawyerLoginScreen from './laywerlogin/laywerscreens/laywerloginScreen';
 import LoginScreen from './screens/loginScreen';
+import LawyerOtherLawyerProfile from './laywerlogin/laywerscreens/lawyerotherLawyerProfile';
+import LawyerDrawerScreen from './laywerlogin/laywerscreens/laywerdrawer';
 
 const Stack = createNativeStackNavigator(); 
  //hell
@@ -97,6 +99,10 @@ export default function App() {
                 <Stack.Screen name="LawyerChangeUsername" component={LawyerChangeUsername} />
                 <Stack.Screen name="LawyerEditProfile" component={LawyerEditProfile} />
                 <Stack.Screen name="LawyerUploadProfilePicture" component={LawyerUploadProfilePicture} />
+
+                <Stack.Screen name="LawyerOtherLawyerProfile" component={LawyerOtherLawyerProfile} />
+                <Stack.Screen name="LawyerDrawerScreen" component={LawyerDrawerScreen} />
+
                 
 
       </Stack.Navigator>

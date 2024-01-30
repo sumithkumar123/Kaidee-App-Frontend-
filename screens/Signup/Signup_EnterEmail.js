@@ -7,43 +7,106 @@ const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://m
 const Signup_EnterEmail = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [loading, setLoading] = useState(false)
+    // const handleEmail = () => {
+    //     // setLoading(true)
+    //     // navigation.navigate('Signup_EnterVerificationCode')
+    //     if (email === '') {
+    //         alert('Please enter email')
+    //     }
+    //     else {
+    //         setLoading(true)
+    //         fetch('http://10.0.2.2:3000/verify', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({
+    //                 email: email
+    //             })
+    //         })
+    //             .then(res => res.json()).then(
+    //                 data => {
+    //                     if (data.error === "Invalid Credentials") {
+    //                         // alert('Invalid Credentials')
+    //                         alert('Invalid Credentials')
+    //                         setLoading(false)
+    //                     }
+    //                     else if (data.message === "Verification Code Sent to your Email") {
+    //                         setLoading(false)
+    //                         alert(data.message);
+    //                         navigation.navigate('Signup_EnterVerificationCode', {
+    //                             useremail: data.email,
+    //                             userVerificationCode: data.VerificationCode
+    //                         })
+
+    //                     }
+    //                 }
+    //             )
+    //     }
+    // }
+
+
     const handleEmail = () => {
-        // setLoading(true)
-        // navigation.navigate('Signup_EnterVerificationCode')
         if (email === '') {
-            alert('Please enter email')
-        }
-        else {
-            setLoading(true)
-            fetch('http://10.0.2.2:3000/verify', {
-                method: 'POST',
-                headers: {
+            alert('Please enter email');
+        } else {
+            setLoading(true);
+
+            // Make parallel requests to "lawverify" and "verify"
+            Promise.all([
+                fetch('http://10.0.2.2:3000/lawverify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email
+                    })
+                }).then(res => res.json()),
+                fetch('http://10.0.2.2:3000/verify', {
+                     method: 'POST',
+                     headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
+                            },
+                    body: JSON.stringify({
                     email: email
                 })
-            })
-                .then(res => res.json()).then(
-                    data => {
-                        if (data.error === "Invalid Credentials") {
-                            // alert('Invalid Credentials')
-                            alert('Invalid Credentials')
-                            setLoading(false)
-                        }
-                        else if (data.message === "Verification Code Sent to your Email") {
-                            setLoading(false)
-                            alert(data.message);
-                            navigation.navigate('Signup_EnterVerificationCode', {
-                                useremail: data.email,
-                                userVerificationCode: data.VerificationCode
-                            })
+            }).then(res => res.json()),
+                // Add another fetch for the "verify" request here
+              
+            ]).then(([lawVerifyData, verifyData]) => {
+                // Handle responses for both requests
+                if (lawVerifyData.error === "Invalid Credentials") {
+                    alert('Invalid Credentials');
+                } else if (lawVerifyData.message === "Verification Code Sent to your Email") {
+                  
+                    var flag=1;
+                
+                }
+                if (verifyData.error === "Invalid Credentials") {
+                    alert('Invalid Credentials');
+                } else if (verifyData.message === "Verification Code Sent to your Email") {
+                
+                    var k=1;
+                }
+                if(flag && k) {
+                       alert(verifyData.message);
+                    navigation.navigate('Signup_EnterVerificationCode', {
+                        useremail: verifyData.email,
+                        userVerificationCode: verifyData.VerificationCode
+                    });
+                }
 
-                        }
-                    }
-                )
+                // Handle the response for the "verify" request similarly
+
+                setLoading(false);
+            }).catch(error => {
+                console.error("Error in parallel requests:", error);
+                setLoading(false);
+            });
         }
-    }
+    };
+
     return (
         <View style={containerFull}>
             <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
@@ -68,7 +131,7 @@ const Signup_EnterEmail = ({ navigation }) => {
             />
             {
                 loading ?
-                    <ActivityIndicator size="large" color="white" />
+                    <ActivityIndicator size="large" color="black" />
                     :
                     <Text style={formbtn}
                         onPress={() => handleEmail()}

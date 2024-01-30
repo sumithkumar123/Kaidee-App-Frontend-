@@ -285,7 +285,7 @@ const LoginScreen = ({ navigation }) => {
 
 
             <Text style={formTextLinkCenter}>
-                Don't have an account? <Text style={{ color: 'white' }}
+                Don't have an account? <Text style={{ color: 'black' }}
                     onPress={() => navigation.navigate('Signup_EnterEmail')}
                 >Signup</Text>
             </Text>

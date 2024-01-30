@@ -45,8 +45,6 @@ const LawyerForgotPassword_ChoosePassword = ({ navigation, route }) => {
                     alert(err)
                 })
         }
-
-        // navigation.navigate('ForgotPassword_AccountRecovered')
     }
     return (
         <View style={containerFull}>
@@ -71,7 +69,7 @@ const LawyerForgotPassword_ChoosePassword = ({ navigation, route }) => {
                 onChangeText={(text) => setconfirmpassword(text)}
             />
             {
-                loading ? <ActivityIndicator size="large" color="white" /> :
+                loading ? <ActivityIndicator size="large" color="black" /> :
                     <Text style={formbtn}
                         onPress={() => handlePasswordChange()}
                     >

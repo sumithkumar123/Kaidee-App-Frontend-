@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, ActivityIndicator} from 'react-native'
 import React, { useState } from 'react'
-import { containerFull, goback, hr80, logo1, row } from '../../../screens/CommonCss/pagecss';
-import { formbtn, formHead3, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
+import { containerFull, goback, logo1 } from '../../../screens/CommonCss/pagecss';
+import { formbtn,formHead2 } from '../../../screens/CommonCss/formcss';
 import { MaterialIcons } from '@expo/vector-icons';
 import { firebase } from '../../../screens/Firebase/Config'
 import * as ImagePicker from 'expo-image-picker';
@@ -69,7 +69,7 @@ const LawyerUploadProfilePicture = ({ navigation }) => {
                                 else if (data.error === "Invalid Credentials") {
                                     alert('Invalid Credentials')
                                     setLoading(false)
-                                    navigation.navigate('LawyerLoginScreen')
+                                    navigation.navigate('LoginScreen')
                                 }
                                 else {
                                     setLoading(false)

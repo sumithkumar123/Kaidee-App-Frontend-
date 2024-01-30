@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { containerFull, goback, hr80, logo1, row } from '../../../screens/CommonCss/pagecss';
-import { formbtn, formHead3, formInput, formHead2 } from '../../../screens/CommonCss/formcss';
+import { containerFull, goback,logo1} from '../../../screens/CommonCss/pagecss';
+import { formbtn, formHead3, formInput} from '../../../screens/CommonCss/formcss';
 import { MaterialIcons } from '@expo/vector-icons';
 const image={uri:"https://mc.webpcache.epapr.in/mcms.php?size=large&in=https://mcmscache.epapr.in/post_images/website_350/post_30210858/full.jpg"};
 
@@ -27,7 +27,7 @@ const LawyerForgotPassword_EnterVerificationCode = ({ navigation, route }) => {
     }
     return (
         <View style={containerFull}>
-            <TouchableOpacity onPress={() => navigation.navigate('LawyerLoginScreen')} style={goback}>
+            <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')} style={goback}>
 
                 <MaterialIcons name="arrow-back-ios" size={24} color="gray" />
                 <Text style={{
