@@ -3,7 +3,7 @@ import React,{useState} from 'react'
 import axios from 'axios'
 import {Ionicons} from '@expo/vector-icons'
 
-const PALM_API_KEY = 'AIzaSyA6W2dJh5q-Uoz29dfcIHGflFcbSZSf4ww'
+const PALM_API_KEY = ''
 
 const ChatBot = () => {
     const [messages,setMessages] = useState([]);
