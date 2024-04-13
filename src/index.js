@@ -85,6 +85,10 @@ const ChatBot = () => {
                        style={{
                         backgroundColor: item.sender === 'user' ? '#007AFF': '#974683',
                         padding: 10,
+<<<<<<< HEAD
+                        borderRadius: 10,
+=======
+>>>>>>> finalbranch
                         }}
                     >
                         <Text style={{
@@ -142,6 +146,10 @@ const styles = StyleSheet.create({
     inputContainer:  {
         backgroundColor: '#0f0f0f',
         padding: 10,
+<<<<<<< HEAD
+        borderRadius: 10,
+=======
+>>>>>>> finalbranch
         marginTop: 20,
         width: '100%',
         alignSelf: 'center',
@@ -160,6 +168,10 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 16,
         backgroundColor: '#f5f5f5',
+<<<<<<< HEAD
+        borderRadius: 10,
+=======
+>>>>>>> finalbranch
         marginBottom: 20,
         shadowColor: '#000',
         shadowOffset: {
@@ -172,6 +184,10 @@ const styles = StyleSheet.create({
     },
     sendButton: {
         padding:10,
+<<<<<<< HEAD
+        borderRadius: 10,
+=======
+>>>>>>> finalbranch
         backgroundColor: '#007AFF'
     }
   });
