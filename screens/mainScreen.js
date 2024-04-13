@@ -1,29 +1,31 @@
-import React from 'react';
-import {Text,View, Button,StyleSheet,Image,TouchableHighlight} from 'react-native';
+
+
+import * as React from 'react';
+import { Text, View ,Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from '../routes/homeStackScreen';
 import LawBot from './lawbot';
 import Rehabilation from './Rehabilation';
-
-const Tab = createBottomTabNavigator();
-
-// function LogoTitle() {
-//   return (
-//     <Image
-//       style={{ width: 50, height: 50 }}
-//       source={require('../assets/appicon.png')}
-//     />
-//   );
-// }
+import ProfileScreen from './profileScreen';
+import Dashboard from '../information/dashboardinfo';
+const Tab = createMaterialBottomTabNavigator();
 
 export default function MainScreen({navigation}) {
-    return (
-      <Tab.Navigator 
-
-      >
-      <Tab.Screen name="HomeS" component={HomeStackScreen} 
+  return (
+    <Tab.Navigator
+      initialRouteName="HomeStackScreen"
+      activeColor="#e91e63"
+      labelStyle={{ fontSize: 12 }}
+      style={{ backgroundColor: 'tomato' }}
+    >
+       <Tab.Screen name="HomeStackScreen" component={HomeStackScreen} 
       options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="home" color={color} size={26} />
+        ),
         // headerTitle: (props) => <LogoTitle {...props} />,
         title: 'Home Screen',
         headerStyle: {
@@ -31,7 +33,7 @@ export default function MainScreen({navigation}) {
         }, 
         headerTintColor: '#fff',
        
-        headerTitleStyle: {
+        headerTitleStyle: { 
           fontWeight: 'bold',
         },  
 
@@ -47,8 +49,13 @@ export default function MainScreen({navigation}) {
   )
         
       }}  />
-      <Tab.Screen name="LawBot" component={LawBot} 
+       <Tab.Screen name="Dashboard" component={Dashboard} 
+      
       options={{
+        tabBarLabel: 'Updates',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="bell" color={color} size={26} />
+        ),
         title: 'LawBot',
         headerStyle: {
           backgroundColor: 'black',
@@ -58,9 +65,13 @@ export default function MainScreen({navigation}) {
         },
         headerTintColor: '#fff',
       }} />
-      <Tab.Screen name="Rehabilation" component={Rehabilation} 
+       <Tab.Screen name="ProfileScreen" component={ProfileScreen} 
       options={{
-        title: 'Rehabilation',
+        tabBarLabel: 'Profile',
+        tabBarIcon: ({ color }) => (
+          <MaterialCommunityIcons name="account" color={color} size={26} />
+        ),
+        title: 'ProfileScreen',
         headerStyle: {
           backgroundColor: 'black',
         },
